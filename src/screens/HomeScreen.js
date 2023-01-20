@@ -5,7 +5,7 @@ import Btn from '../components/Btn';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Btn title='Sign Up' />
+      <Btn  title='Sign Up' />
     </View>
   );
 }
