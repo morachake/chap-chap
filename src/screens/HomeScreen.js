@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Btn from '../components/Btn';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Btn title='Sign Up' />
     </View>
   );
 }
