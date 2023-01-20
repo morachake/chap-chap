@@ -1,11 +1,4 @@
 {
-  "expo": {
-    "name": "chap-chap",
-    "slug": "chap-chap",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  },
-  "name": "chap-chap"
+  "name": "Chap_chap",
+  "displayName": "Chap_chap"
 }
