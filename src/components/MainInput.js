@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     width: '90%',
-
   },
   label: {
     fontSize: 13,

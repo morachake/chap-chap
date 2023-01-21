@@ -12,7 +12,7 @@ export default function HomeScreen() {
 }
 const styles = StyleSheet.create({
   container: {
-      justifyContent:'center'
+    justifyContent: 'center',
   },
   banner: {
     resizeMode: 'cover',
