@@ -13,8 +13,17 @@ export default function MainInput({label}) {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    flexDirection: 'row',
+    width: '90%',
+
   },
-  label: {},
-  textInput: {},
+  label: {
+    fontSize: 13,
+    fontFamily: 'Inter-Medium',
+    paddingBottom: 5,
+  },
+  textInput: {
+    borderColor: '#111',
+    borderWidth: 1,
+    borderRadius: 6,
+  },
 });

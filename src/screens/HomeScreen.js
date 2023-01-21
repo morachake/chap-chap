@@ -1,18 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image} from 'react-native';
+import {IMAGES} from '../constants/index';
 import Btn from '../components/Btn';
-import MainInput from '../components/MainInput';
-
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Btn title="Sign Up" onPress={undefined} />
-      <MainInput label='Your Name' />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Image source={IMAGES.Cleaner} style={styles.banner} />
+      <Btn title="Register" />
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Inter-bold',
+      justifyContent:'center'
+  },
+  banner: {
+    resizeMode: 'cover',
+    width: '100%',
+    height: '90%',
   },
 });
