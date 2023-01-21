@@ -3,8 +3,8 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../constants/index';
 export default function Btn({title,onPress}) {
   return (
-    <View>
-      <TouchableOpacity style={styles.btn} onPress={onPress}>
+       <View>
+            <TouchableOpacity style={styles.btn} onPress={onPress}>
         <Text style={styles.title}>{title}</Text>
       </TouchableOpacity>
     </View>
