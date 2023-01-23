@@ -1,29 +1,29 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {COLORS} from '../constants/index';
-export default function Btn({title, onPress}) {
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../constants';
+
+const Btn = ({ title, onPress }) => {
   return (
-    <View>
-      <TouchableOpacity style={styles.btn} onPress={onPress}>
-        <Text style={styles.title}>{title}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      <Text style={styles.buttonText}>{title}</Text>
+    </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  btn: {
-    padding: 2,
+  button: {
     backgroundColor: COLORS.primary,
     width: '80%',
     height: 44,
-    color: '#FFFF',
-    borderRadius: 8,
     alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
   },
-  title: {
-    color: '#FFFF',
-    fontFamily: 'Inter-Medium',
-    fontSize: 14,
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
+
+export default Btn;
