@@ -9,7 +9,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <Text style={styles.textAd}>Best Home Services for You</Text>
         <Btn title="Register" onPress={undefined} />
-        <View style={{flexDirection: 'row',margin:3}}>
+        <View style={{flexDirection: 'row', margin: 3}}>
           <Text style={styles.text}>Already have an account</Text>
           <Text style={styles.text2}>Login</Text>
         </View>
