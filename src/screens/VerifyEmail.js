@@ -12,7 +12,7 @@ export default function VerifyEmail() {
         <MainInput label="Verification code" />
       </View>
       <View style={styles.btncontainer}>
-        <Btn title="Register" />
+        <Btn title="Verify" />
       </View>
     </View>
   );

@@ -3,17 +3,17 @@ import {View, Text, StyleSheet} from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
-export default function RegisterScreen() {
+export default function ResetPassword() {
   return (
     <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
       <Header pagename="Home" iconLeft="arrowleft" iconright={undefined} />
-      <Text style={styles.heading}>Register</Text>
+      <Text style={styles.heading}>Create new password</Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <MainInput label="Your Name" />
-        <MainInput label="Your Email Adress" />
+        <MainInput label="New password" />
+        <MainInput label="Confirm password" />
       </View>
       <View style={styles.btncontainer}>
-        <Btn  title="Register" />
+        <Btn  title="Finish" />
       </View>
     </View>
   );
