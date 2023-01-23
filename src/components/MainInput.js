@@ -14,13 +14,15 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     width: '90%',
+    marginTop: 10,
+    backgroundColor: '#F5F5F5',
   },
   label: {
     fontSize: 13,
     fontFamily: 'Inter-Medium',
-    paddingBottom: 5,
   },
   textInput: {
+    marginTop: 10,
     borderColor: '#111',
     borderWidth: 1,
     borderRadius: 6,
