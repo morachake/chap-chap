@@ -6,7 +6,7 @@ import Btn from '../components/Btn';
 export default function RegisterScreen() {
   return (
     <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
-      <Header pagename="Home" iconLeft="arrowleft" iconright={undefined} />
+      <Header iconLeft="arrowleft" iconright={undefined} />
       <Text style={styles.heading}>Register</Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <MainInput label="Your Name" />

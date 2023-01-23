@@ -7,7 +7,7 @@ import {COLORS} from '../constants';
 export default function LoginScreen() {
   return (
     <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
-      <Header pagename="Home" iconLeft="arrowleft" />
+      <Header  iconLeft="arrowleft" />
       <Text style={styles.heading}>Create new password</Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <MainInput label="New password" />

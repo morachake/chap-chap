@@ -6,7 +6,7 @@ import Btn from '../components/Btn';
 export default function VerifyEmail() {
   return (
     <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
-      <Header pagename="Home" iconLeft="arrowleft" iconright={undefined} />
+      <Header iconLeft="arrowleft" iconright={undefined} />
       <Text style={styles.heading}>Verify Your Email</Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <MainInput label="Verification code" />
