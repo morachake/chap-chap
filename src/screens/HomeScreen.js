@@ -26,7 +26,8 @@ export default function HomeScreen() {
                 </View>
             </View>
             <View style={{ flex: 1.5, backgroundColor: '#FFFFFF' }}>
-                <View style={{ flexDirection:'column'}}>
+                <View style={{ flexDirection: 'column' }}>
+                    <Text style={styles.title}>Categories</Text>
                     <Services/>
                 </View>
             </View>
@@ -69,4 +70,9 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'Poppins-LightItalic',
     },
+    title: {
+        fontFamily: 'Poppins-Light',
+        fontSize: 16,
+        color :'#000000'
+    }
 });
