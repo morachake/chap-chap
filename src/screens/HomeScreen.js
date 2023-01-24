@@ -3,11 +3,12 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { COLORS, IMAGES } from '../constants';
 import SearchInput from '../components/SearchInput';
 import Services from '../components/Services';
+import ServiceCard from '../components/ServiceCard';
 
 export default function HomeScreen() {
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ flex: 0.8, backgroundColor: '#EAFFFF' }}>
+            <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
                 <View style={styles.header}>
                     <Text style={{ justifyContent: 'center' }}>
                         <Text style={styles.firstThree}>Chap</Text>
@@ -29,6 +30,10 @@ export default function HomeScreen() {
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={styles.title}>Categories</Text>
                     <Services/>
+                </View>
+                    <Text style={styles.title}>Home Services</Text>
+                <View style={{alignItems:'center'}}>
+                    <ServiceCard/>
                 </View>
             </View>
         </View>
@@ -73,6 +78,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Poppins-Light',
         fontSize: 16,
-        color :'#000000'
+        color: '#000000',
+        marginLeft:10
     }
 });

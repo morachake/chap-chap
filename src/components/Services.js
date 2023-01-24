@@ -10,7 +10,7 @@ export default function Services() {
                         borderRadius: 40, width: 60,
                         height: 60, borderWidth: 1, borderColor: '#111', overflow: 'hidden'
                     }}>
-                        <Image source={item.image} resizeMode='cover' style={styles.image} />
+                        <Image source={item.image} resizeMode='contain' style={styles.image} />
                     </View>
                     <Text
                         style={{
@@ -30,15 +30,15 @@ export default function Services() {
 
 const styles = StyleSheet.create({
     container: {
+        justifyContent:'center',
         borderRadius: 32,
         overflow: 'hidden',
         borderWidth: 1,
-        borderColor: '#111'
+        borderColor: '#111',
+        padding: 10
     },
     image: {
-        width: 40,
-        height: 40,
-
-
+        width: 45,
+        height: 50,
     }
 })
