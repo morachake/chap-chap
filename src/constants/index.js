@@ -5,4 +5,5 @@ export const COLORS = {
 
 export const IMAGES = {
   Cleaner: require('../assets/images/cleaner.png'),
+  User: require('../assets/images/user.png'),
 };

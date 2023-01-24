@@ -1,54 +1,69 @@
 import React from 'react';
-import {View, ImageBackground, Text, StyleSheet} from 'react-native';
-import {IMAGES, COLORS} from '../constants/index';
-import Btn from '../components/Btn';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {COLORS, IMAGES} from '../constants';
+import SearchInput from '../components/SearchInput';
 
 export default function HomeScreen() {
   return (
-    <ImageBackground source={IMAGES.Cleaner} style={styles.background}>
-      <View style={styles.container}>
-        <Text style={styles.textAd}>Best Home Services for You</Text>
-        <Btn title="Register" onPress={undefined} />
-        <View style={{flexDirection: 'row', margin: 3}}>
-          <Text style={styles.text}>Already have an account</Text>
-          <Text style={styles.text2}>Login</Text>
+    <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: '#EAFFFF'}}>
+        <View style={styles.header}>
+          <Text style={{justifyContent: 'center'}}>
+            <Text style={styles.firstThree}>Chap</Text>
+            <Text style={styles.rest}>Chap</Text>
+          </Text>
+          <Image
+            source={IMAGES.User}
+            resizeMode="cover"
+            style={{width: 40, height: 40}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 10}}>
+          <Text style={styles.user}>Hi James,</Text>
+          <Text style={styles.service}>What Services do you need today?</Text>
+         <SearchInput />
         </View>
       </View>
-    </ImageBackground>
+      <View style={{flex: 1.5, backgroundColor: '#FFFFFF'}}>
+        <Text>Bottom Half</Text>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   container: {
-    backgroundColor: 'white',
-    padding: 15,
-    borderRadius: 10,
-    width: '100%',
-    height: '35%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: 0,
+    display: 'flex',
+    backgroundColor: '#FFFFFF',
   },
-  textAd: {
-    fontFamily: 'Inter-Bold',
-    fontSize: 32,
-    color: '#000',
-    textAlign: 'center',
-    marginBottom: 20,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    padding: 10,
   },
-  text: {
-    fontSize: 14,
-    color: '#000',
+  topcontainer: {
+    backgroundColor: COLORS.lightPrimary,
   },
-  text2: {
-    fontSize: 14,
-    color: COLORS.primary,
+  firstThree: {
+    color: '#00748D',
+    fontFamily: 'Poppins-BoldItalic',
+    fontSize: 18,
+  },
+  rest: {
+    color: '#041747',
+    fontFamily: 'Poppins-BoldItalic',
+    fontSize: 18,
+  },
+  user: {
+    paddingTop: 10,
+    fontFamily: 'Poppins-Light',
+    fontSize: 12,
+    color: '##000000',
+  },
+  service: {
+    paddingTop: 10,
+    fontSize: 24,
+    fontFamily: 'Poppins-LightItalic',
   },
 });
