@@ -2,6 +2,7 @@ import React from 'react'
 import { ScrollView, View, Text, Image, StyleSheet } from 'react-native'
 import servicesData from '../assets/Data/Data'
 export default function Services() {
+    
     return (
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
             {servicesData.map((item, index) => (
