@@ -4,7 +4,7 @@ import { View } from 'react-native'
 export default function CleanerScreen() {
   return (
       <View>
-          
+         
     </View>
   )
 }
