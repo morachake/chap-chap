@@ -32,9 +32,12 @@ export default function HomeScreen() {
                     <Services/>
                 </View>
                     <Text style={styles.title}>Home Services</Text>
-                <View style={{alignItems:'center'}}>
-                    <ServiceCard/>
-                </View>
+             
+                    <ServiceCard />
+                    
+              
+                <Text style={styles.title}>Other Services</Text>
+                <ServiceCard/>
             </View>
         </View>
     );
