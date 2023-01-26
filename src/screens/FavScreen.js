@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import JobCard from '../components/JobCard';
-import {COLORS} from '../constants/index';
+import { COLORS } from '../constants/index';
 
 export default function FavScreen() {
     return (
@@ -14,11 +14,11 @@ export default function FavScreen() {
                 <JobCard cleaner="Munene" job="Repair" date="9th sep 2020" />
                 <JobCard cleaner="Munene" job="Mantainance" date="9th sep 2020" />
 
-
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={{color: '#FFFF', fontSize: 14 }}>Log Out</Text>
-                </TouchableOpacity>
-
+                <View style={{ alignSelf: 'stretch', alignItems: 'center', justifyContent: 'flex-end' }}>
+                    <TouchableOpacity style={styles.btn}>
+                        <Text style={{ color: '#FFFF', fontSize: 14 }}>Log Out</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
         </View>
