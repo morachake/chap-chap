@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import Header from '../components/Header'
 import {IMAGES} from '../constants/index'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
@@ -19,11 +19,14 @@ export default function ProfileScreen() {
                   </View>
               </View>
           </View>
-          <View style={{ flex: 1.8, backgroundColor: '#FFFFFF',alignItems:'center' }}>
+          <View style={{ flex: 2, backgroundColor: '#FFFFFF',alignItems:'center' }}>
               <UserDetailsCard iconame="email" headline="Email Adress" title="phineas@gmail.com" />
               <UserDetailsCard iconame="cellphone" headline="Phone" title="0720000000" />
               <UserDetailsCard iconame="id-card" headline="ID Card" title="7858642" />
-              <UserDetailsCard iconame="lock-open-outline" headline="Reset password"  title="Reset Password"/>
+              <UserDetailsCard iconame="lock-open-outline" headline="Reset password" title="Reset Password" />
+              <TouchableOpacity style={styles.btn}>
+                  <Text style={{color:'#FD0B0B',fontSize:14}}>Log Out</Text>
+              </TouchableOpacity>
           </View>
    </View>
   )
@@ -50,5 +53,14 @@ const styles = StyleSheet.create({
     headlines: {
         color: '#000000',
         padding: 3,
+    },
+    btn: {
+        backgroundColor: '#E8E8E8',
+        borderRadius: 8,
+        height: 45,
+        width:150,
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })
