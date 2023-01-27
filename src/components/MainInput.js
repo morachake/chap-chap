@@ -5,7 +5,7 @@ export default function MainInput({label}) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.textInput} />
+          <TextInput style={styles.textInput}  />
     </View>
   );
 }
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     width: '90%',
     marginTop: 10,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FFFF',
   },
   label: {
     fontSize: 13,
