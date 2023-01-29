@@ -1,10 +1,29 @@
-import React from 'react';
-import { View } from 'react-native';
+import React,{useState} from 'react';
+import { View, TextInput, StyleSheet} from 'react-native';
+import CalendarDatePicker from 'react-native-calendar-datepicker';
 
 export default function CalendarInput() {
+    const [date, setDate] = useState(new Date().toDateString());
+    const [showCalendar, setShowCalendar] = useState(false);
   return (
-      <View>
-          
-    </View>
+    <View>
+    <TextInput
+      style={styles.input}
+      onFocus={() => setShowCalendar(true)}
+      value={date}
+    />
+    {showCalendar && (
+      <CalendarDatePicker
+        onDateChange={date => setDate(date.toDateString())}
+        initialDate={new Date()}
+      />
+    )}
+  </View>
   );
 }
+
+const styles = StyleSheet.create({
+    input: {
+        
+    }
+})
