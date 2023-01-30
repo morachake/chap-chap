@@ -9,12 +9,11 @@ export default function Btn({title, onPress, ...props}) {
     </TouchableOpacity>
   );
 }
-
 const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.primary,
     width: '80%',
-    height: 44,
+    height: 43,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
