@@ -1,19 +1,48 @@
-import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
-
+import CalendarDatePicker from 'react-native-calendar-datepicker';
 export default function DetailsScreen() {
+    const [date, setDate] = useState(new Date().toDateString());
+    const [showCalendar, setShowCalendar] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [houses, setHouses] = useState()
+    const [rooms, setRooms] = useState()
+    const [adress, setAdress] = useState()
+    const [details, setDetails] = useState()
+    const handleSubmit = () => {
+
+    }
     return (
-        <View style={styles.container}>
-            <Header iconLeft="arrowleft" />
+        <KeyboardAvoidingView style={styles.container}>
+            <Header iconLeft="arrowleft"  />
             <View style={styles.topContainer}>
                 <Text>This is the top container</Text>
-                <MainInput label="Type of House" />
+                <MainInput label="Type of House" onChangetext={text => setHouses(text)} />
                 <MainInput label="Number of rooms" />
                 <MainInput label="Adress" />
                 <MainInput label="Any other Details" />
+                {/* calendar input start */}
+                <View style={styles.calendar}>
+                    <TextInput
+                        style={styles.input}
+                        onFocus={() => setShowCalendar(true)}
+                        keyboardType="none"
+                        value={selectedDate.toDateString()}
+                    />
+                    {showCalendar && (
+                        <CalendarDatePicker
+                            onDateChange={date => {
+                                setSelectedDate(date);
+                                setShowCalendar(false);
+                            }}
+                            initialDate={selectedDate}
+                        />
+                    )}
+                </View>
+                {/* calendar input end */}
             </View>
             <View style={styles.bottomContainer}>
                 <View>
@@ -21,11 +50,11 @@ export default function DetailsScreen() {
                     <Text style={{ fontSize: 15, color: '#00000080', fontFamily: 'Inter-Light' }}>KES 20300 - 20700</Text>
 
                 </View>
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
                     <Text style={{ color: '#FFFF', fontSize: 14 }}>Log Out</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 const styles = StyleSheet.create({
@@ -52,6 +81,19 @@ const styles = StyleSheet.create({
         width: 150,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    calendar: {
+        borderWidth: 1,
+        display: 'flex',
+        width: '90%',
+        marginTop: 10,
+        borderRadius: 6,
+        backgroundColor: '#FFFF',
+    },
+    input: {
+        borderColor: '#111',
+        borderWidth: 1,
+        borderRadius: 6,
     }
 });
 
