@@ -1,9 +1,11 @@
 import React from 'react'
-import { Image, ScrollView, Text, View, StyleSheet} from 'react-native'
+import { Image, ScrollView, Text, View, StyleSheet, TouchableOpacity} from 'react-native'
 import { IMAGES } from '../constants/index'
+import { useNavigation } from '@react-navigation/native'
 export default function ServiceCard() {
+    const navigation= useNavigation()
     return (
-        <ScrollView >
+        <TouchableOpacity onPress={() => navigation.navigate('Cleaner')}>
             <View style={styles.container}>
                 <View style={{borderRadius: 20}}>
                     <Image source={IMAGES.Cleaner} resizeMode='cover' style={{resizeMode :'cover', width: 150, height: '100%'}} />
@@ -13,13 +15,13 @@ export default function ServiceCard() {
                     <Text style={styles.titles}>244+ Vendors Avalilable</Text>
                 </View>
             </View>
-        </ScrollView>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        height:80,
+        height:90,
         flexDirection: 'row',
         backgroundColor: '#F5F5F5',
         marginHorizontal: 15,

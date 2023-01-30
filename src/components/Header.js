@@ -1,11 +1,18 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-export default function Header({pagename, iconright, iconLeft}) {
+export default function Header({ pagename, iconright, iconLeft }) {
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Icon name={iconLeft} size={30} style={styles.icons} />
+          <Icon
+              name={iconLeft}
+              size={30}
+              onPress={() => navigation.goBack()}
+              style={styles.icons}
+          />
       <Text style={styles.pagename}>{pagename}</Text>
       <Icon name={iconright} size={25} />
     </View>

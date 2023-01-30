@@ -4,25 +4,24 @@ import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
 import { COLORS } from '../constants';
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
             <Header iconLeft="arrowleft" />
-            <Text style={styles.heading}>Create new password</Text>
+            <Text style={styles.heading}>Create new Account</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <MainInput label="New password" />
                 <MainInput label="Confirm password" />
             </View>
             <View style={{ flexDirection: 'row', margin: 20 }}>
-                <Text style={styles.text}>Already have an account ?</Text>
-                <Text style={styles.text2}>Login</Text>
+                <Text style={styles.text}>Dont  have an account ?</Text>
+                <Text style={styles.text2} onPress={() => navigation.navigate('Register')}>Register</Text>
             </View>
             <View style={styles.btncontainer}>
-                <Btn title="Login" />
-                <View style={{ flexDirection: 'row', marginTop: 5 }}>
-                    <Text style={styles.text}>Already have an account</Text>
-                    <Text style={styles.text2}>Login</Text>
-                </View>
+                <Btn
+                    onPress={()=>navigation.navigate("Home")}
+                    title="Login" />
+              
             </View>
         </View>
     );

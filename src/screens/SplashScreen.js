@@ -8,10 +8,10 @@ export default function SplashScreen({navigation}) {
     <ImageBackground source={IMAGES.Cleaner} style={styles.background}>
       <View style={styles.container}>
         <Text style={styles.textAd}>Best Home Services for You</Text>
-        <Btn title="Register" onPress={() => navigation.navigate('Home')} />
+        <Btn title="Register" onPress={() => navigation.navigate('Register')} />
         <View style={{flexDirection: 'row', margin: 3}}>
           <Text style={styles.text}>Already have an account</Text>
-          <Text style={styles.text2}>Login</Text>
+          <Text style={styles.text2} onPress={() => navigation.navigate('Login')}>Login</Text>
         </View>
       </View>
     </ImageBackground>

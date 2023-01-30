@@ -1,14 +1,31 @@
-import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 import Header from '../components/Header'
 import CleanerCard from '../components/CleanerCard'
 export default function CleanerScreen() {
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000)
+    }, []);
     return (
-        <View style={{flex: 1, backgroundColor: '#F5F5F5' }}>
+        <View style={{ flex: 1, backgroundColor: '#F5F5F5' }}>
             <Header iconLeft="arrowleft" />
-            <Text style={styles.heading}>2 Cleaners found</Text>
-            <Text style={styles.subtitle}>Tap to Choose one from Below</Text>
-            <CleanerCard/>
+            {isLoading ? (
+                <View style={{ alignItems: 'center' }}>
+                    <Text>Searching Cleaners </Text>
+                    <ActivityIndicator size="large" color="#00748D" />
+                </View>
+            ) : (
+                <>
+                    <Text style={styles.heading}>2 Cleaners found</Text>
+                    <Text style={styles.subtitle}>Tap to Choose one from Below</Text>
+                    <CleanerCard />
+                </>
+            )
+            }
+
         </View>
     )
 }

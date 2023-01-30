@@ -1,11 +1,11 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS, IMAGES } from '../constants';
 import SearchInput from '../components/SearchInput';
 import Services from '../components/Services';
 import ServiceCard from '../components/ServiceCard';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
@@ -14,11 +14,15 @@ export default function HomeScreen() {
                         <Text style={styles.firstThree}>Chap</Text>
                         <Text style={styles.rest}>Chap</Text>
                     </Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
                     <Image
                         source={IMAGES.User}
                         resizeMode="cover"
                         style={{ width: 40, height: 40 }}
+                        
                     />
+                    </TouchableOpacity>
+                    
                 </View>
                 <View style={{ paddingHorizontal: 10 }}>
                     <Text style={styles.user}>Hi James,</Text>
@@ -26,7 +30,7 @@ export default function HomeScreen() {
                     <SearchInput />
                 </View>
             </View>
-            <View style={{ flex: 1.5, backgroundColor: '#FFFFFF' }}>
+            <View style={{ flex: 1.6, backgroundColor: '#FFFFFF' }}>
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={styles.title}>Categories</Text>
                     <Services/>
@@ -82,6 +86,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Light',
         fontSize: 16,
         color: '#000000',
-        marginLeft:10
+        margin:10
     }
 });
