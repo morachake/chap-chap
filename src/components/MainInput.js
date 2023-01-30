@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     width: '90%',
     marginTop: 10,
-    backgroundColor: '#FFFF',
   },
   label: {
     fontSize: 13,
@@ -26,5 +25,6 @@ const styles = StyleSheet.create({
     borderColor: '#111',
     borderWidth: 1,
     borderRadius: 6,
+    backgroundColor: '#FFFF',
   },
 });
