@@ -6,7 +6,8 @@ const Stack = createNativeStackNavigator();
 
 const MainNavStack = () => {
     
-        <Stack.Navigator>
+    <Stack.Navigator>
+            
             <Stack.Screen name='Home' component={SplashScreen}/>
         </Stack.Navigator>
 
