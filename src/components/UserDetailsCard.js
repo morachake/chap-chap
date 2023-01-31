@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text } from 'react-native'
+import { ScaledSheet } from 'react-native-size-matters'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 export default function UserDetailsCard({ iconame, headline, title }) {
     return (
@@ -14,22 +15,22 @@ export default function UserDetailsCard({ iconame, headline, title }) {
 }
 
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     icons: {
-        marginHorizontal: 20
+        marginHorizontal: '20@s'
     },
     detailscard: {
         alignItems: 'center',
-        borderRadius: 8,
+        borderRadius: '8@s',
         flexDirection: 'row',
         //justifyContent: 'space-around',
         width: '90%',
         backgroundColor: '#F5F5F5',
-        height: 65,
-        marginTop: 15
+        height: '65@s',
+        marginTop: '15@s'
     },
     headlines: {
         color: '#000000',
-        padding: 3,
+        padding: '3@s',
     }
 })

@@ -2,6 +2,7 @@ import React from 'react'
 import { View, ScrollView, StyleSheet, Image, Text,TouchableOpacity } from 'react-native'
 import cleanerData from '../assets/Data/Data'
 import Rating from './Rating';
+import { ScaledSheet ,scale} from 'react-native-size-matters';
 export default function CleanerCard() {
 
     const cleanerData = [
@@ -33,12 +34,12 @@ export default function CleanerCard() {
                 <TouchableOpacity key={index} style={styles.container} >
                     <Image source={item.image}
                         resizeMode="cover"
-                        style={{ width: 100, height: 100 ,margin:10}}
+                        style={{ width: scale(100), height: scale(100) ,margin:scale(10)}}
                     />
                     <View style={{padding:10}}>
                         <Text style={styles.textContainer}>{item.name}</Text>
                         <Text style={styles.textContainer}>{item.distance}</Text>
-                        <Text style={{...styles.textContainer}}>
+                        <Text style={styles.textContainer}>
                             <Rating initialValue={item.rating} />
                         </Text>
                     </View>
@@ -47,17 +48,17 @@ export default function CleanerCard() {
         </ScrollView>
     )
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
-        marginHorizontal: 10,
-        marginBottom: 10,
-        borderWidth: 1,
-        borderRadius: 12,
+        marginHorizontal: '10@s',
+        marginBottom: '10@s',
+        borderWidth: '1@s',
+        borderRadius: '12@s',
         borderColor: '#D9D9D9',
         flexDirection: 'row',
         width : '90%'
     },
     textContainer: {
-        marginVertical:4
+        marginVertical:'4@s'
     }
 })

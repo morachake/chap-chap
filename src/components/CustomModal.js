@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, Button, Modal, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet,scale } from 'react-native-size-matters';
 import { IMAGES } from '../constants/index'
-import Btn from './Btn';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function CustomModal({ modalVisible, setModalVisible, navigation }) {
@@ -15,15 +15,15 @@ export default function CustomModal({ modalVisible, setModalVisible, navigation 
             onRequestClose={() => setModalVisible(false)}
         >
             <View style={styles.screen}>
-                <View style={{ borderBottomWidth: 1, width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                <View style={{ borderBottomWidth:scale(1), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
                     <Image
                         source={IMAGES.User}
                         resizeMode="cover"
-                        style={{ width: 40, height: 40, margin: 5 }}
+                        style={{ width:scale(40), height: scale(40), margin: scale(5) }}
 
                     />
                     <View style={{alignItems:'center',justifyContent:'center',}}>
-                        <Text style={{fontSize:14,fontFamily:'Inter-Medium'}}>Munene</Text>
+                        <Text style={{fontSize:scale(14),fontFamily:'Inter-Medium'}}>Munene</Text>
                         <TouchableOpacity style={{ flexDirection: 'row' ,alignItems: 'center',padding:5}}>
                             <Text style={{fontSize:12,fontFamily:'Inter-Light'}}>Manage Profile</Text>
                             <Icon name='navigate-next' size={18} />
@@ -33,21 +33,21 @@ export default function CustomModal({ modalVisible, setModalVisible, navigation 
                 </View>
 
                 
-                    <View style={{borderBottomWidth:1,width: '100%'}}>
+                    <View style={{borderBottomWidth:scale(1),width: '100%'}}>
                         <TouchableOpacity style={styles.wrapper}>
-                            <AntDesign name="wallet" size={25} />
+                            <MaterialCommunityIcons name="wallet" size={25} />
                             <Text>Past Jobs</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{borderBottomWidth:1,width: '100%'}}>
+                    <View style={{borderBottomWidth:scale(1),width: '100%'}}>
                         <TouchableOpacity style={styles.wrapper}>
                             <AntDesign name="wallet" size={25} />
                             <Text>Favourites</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{borderBottomWidth:1,width: '100%'}}>
+                    <View style={{borderBottomWidth:scale(1),width: '100%'}}>
                         <TouchableOpacity style={styles.wrapper}>
-                            <AntDesign name="wallet" size={35} />
+                            <AntDesign name="setting" size={35} />
                             <Text>Settings</Text>
                         </TouchableOpacity>
                     </View>
