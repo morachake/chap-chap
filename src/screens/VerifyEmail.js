@@ -19,7 +19,7 @@ export default function VerifyEmail() {
 }
 const styles = StyleSheet.create({
   heading: {
-    fontFamily: 'Poppins-Bold',
+    fontFamily: 'Inter-Bold',
     fontSize: 32,
     color: '#000000',
     margin: 20,
