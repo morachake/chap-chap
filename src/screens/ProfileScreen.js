@@ -3,7 +3,6 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import Header from '../components/Header'
 import { IMAGES } from '../constants/index'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import UserDetailsCard from '../components/UserDetailsCard'
 export default function ProfileScreen() {
     return (

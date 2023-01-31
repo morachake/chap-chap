@@ -59,11 +59,6 @@ const MainNavStack = () => {
                     options={{ headerShown: false }}
                 />
                  <Stack.Screen
-                    name="Favourites"
-                    component={FavScreen}
-                    options={{ headerShown: false }}
-                />
-                 <Stack.Screen
                     name="PastJobs"
                     component={PastJobsScreen}
                     options={{ headerShown: false }}

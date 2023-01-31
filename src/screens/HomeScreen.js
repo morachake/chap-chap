@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS, IMAGES } from '../constants';
 import SearchInput from '../components/SearchInput';
 import Services from '../components/Services';
 import ServiceCard from '../components/ServiceCard';
+import CustomModal from '../components/CustomModal';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
+    const [modalVisible,setModalVisible] =useState(false)
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
+                <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                 <View style={styles.header}>
                     <Text style={{ justifyContent: 'center' }}>
                         <Text style={styles.firstThree}>Chap</Text>
                         <Text style={styles.rest}>Chap</Text>
                     </Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
+                    <TouchableOpacity onPress={()=>setModalVisible(true)}>
                     <Image
                         source={IMAGES.User}
                         resizeMode="cover"
-                        style={{ width: 40, height: 40 }}
+                        style={{ width:40, height: 40 }}
                         
                     />
                     </TouchableOpacity>
@@ -47,7 +51,7 @@ export default function HomeScreen({navigation}) {
     );
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
         display: 'flex',
         backgroundColor: '#FFFFFF',
