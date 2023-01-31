@@ -7,6 +7,11 @@ import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from "../screens/LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import CleanerScreen from "../screens/CleanerScreen";
+import DetailsScreen from "../screens/DetailsScreen";
+import FavScreen from "../screens/FavScreen";
+import PastJobsScreen from "../screens/PastJobsScreen";
+import ResetPassword from "../screens/ResetPassScreen";
+import VerifyEmail from "../screens/VerifyEmail";
 const Stack = createNativeStackNavigator();
 
 const MainNavStack = () => {
@@ -41,6 +46,36 @@ const MainNavStack = () => {
                 <Stack.Screen
                     name="Cleaner"
                     component={CleanerScreen}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Details"
+                    component={DetailsScreen}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Favourites"
+                    component={FavScreen}
+                    options={{ headerShown: false }}
+                />
+                 <Stack.Screen
+                    name="Favourites"
+                    component={FavScreen}
+                    options={{ headerShown: false }}
+                />
+                 <Stack.Screen
+                    name="PastJobs"
+                    component={PastJobsScreen}
+                    options={{ headerShown: false }}
+                />
+                 <Stack.Screen
+                    name="ResetPass"
+                    component={ResetPassword}
+                    options={{ headerShown: false }}
+                />
+                 <Stack.Screen
+                    name="Verify"
+                    component={VerifyEmail}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
