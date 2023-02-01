@@ -5,7 +5,7 @@ import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
 import CalendarDatePicker from 'react-native-calendar-datepicker';
 import { ScaledSheet } from 'react-native-size-matters';
-export default function DetailsScreen() {
+export default function DetailsScreen({navigation}) {
     const [date, setDate] = useState(new Date().toDateString());
     const [showCalendar, setShowCalendar] = useState(false);
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -49,10 +49,9 @@ export default function DetailsScreen() {
                 <View>
                     <Text style={{ fontSize: 17, color: '#00000080', fontFamily: 'Inter-Medium' }}>Total Price</Text>
                     <Text style={{ fontSize: 15, color: '#00000080', fontFamily: 'Inter-Light' }}>KES 20300 - 20700</Text>
-
                 </View>
-                <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
-                    <Text style={{ color: '#FFFF', fontSize: 14 }}>Log Out</Text>
+                <TouchableOpacity onPress={()=> navigation.navigate('Cleaner')} style={styles.btn}>
+                    <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>

@@ -8,7 +8,7 @@ import CustomModal from '../components/CustomModal';
 import { ScaledSheet, scale } from 'react-native-size-matters';
 
 export default function HomeScreen({ navigation }) {
-    const [modalVisible,setModalVisible] =useState(false)
+    const [modalVisible, setModalVisible] = useState(false)
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
@@ -18,15 +18,15 @@ export default function HomeScreen({ navigation }) {
                         <Text style={styles.firstThree}>Chap</Text>
                         <Text style={styles.rest}>Chap</Text>
                     </Text>
-                    <TouchableOpacity onPress={()=>setModalVisible(!modalVisible)}>
-                    <Image
-                        source={IMAGES.User}
-                        resizeMode="cover"
-                        style={{ width:scale(40), height: scale(40) }}
-                        
-                    />
+                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                        <Image
+                            source={IMAGES.User}
+                            resizeMode="cover"
+                            style={{ width: scale(40), height: scale(40) }}
+
+                        />
                     </TouchableOpacity>
-                    
+
                 </View>
                 <View style={{ paddingHorizontal: 10 }}>
                     <Text style={styles.user}>Hi James,</Text>
@@ -37,15 +37,12 @@ export default function HomeScreen({ navigation }) {
             <View style={{ flex: 1.6, backgroundColor: '#FFFFFF' }}>
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={styles.title}>Categories</Text>
-                    <Services/>
+                    <Services />
                 </View>
-                    <Text style={styles.title}>Home Services</Text>
-             
-                    <ServiceCard />
-                    
-              
+                <Text style={styles.title}>Home Services</Text>
+                <ServiceCard />
                 <Text style={styles.title}>Other Services</Text>
-                <ServiceCard/>
+                <ServiceCard />
             </View>
         </View>
     );
@@ -90,6 +87,6 @@ const styles = ScaledSheet.create({
         fontFamily: 'Poppins-Light',
         fontSize: '16@s',
         color: '#000000',
-        margin:'10@s'
+        margin: '10@s'
     }
 });

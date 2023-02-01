@@ -11,7 +11,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
     const navigation = useNavigation();
     return (
         <Modal
-            animationType="slide"
+            animationType="fade"
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => setModalVisible(false)}
