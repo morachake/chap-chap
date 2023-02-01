@@ -5,8 +5,10 @@ import { IMAGES } from '../constants/index'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function CustomModal({ modalVisible, setModalVisible, navigation }) {
+export default function CustomModal({ modalVisible, setModalVisible }) {
+    const navigation = useNavigation();
     return (
         <Modal
             animationType="slide"
@@ -15,16 +17,23 @@ export default function CustomModal({ modalVisible, setModalVisible, navigation 
             onRequestClose={() => setModalVisible(false)}
         >
             <View style={styles.screen}>
-                <View style={{ borderBottomWidth:scale(1), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                <View style={{ borderBottomWidth:scale(1), width: '100%', flexDirection: 'row' ,alignItems:'center'}}>
                     <Image
                         source={IMAGES.User}
                         resizeMode="cover"
-                        style={{ width:scale(40), height: scale(40), margin: scale(5) }}
+                        style={{ width:scale(40), height: scale(40),marginLeft: scale(20) }}
 
                     />
                     <View style={{alignItems:'center',justifyContent:'center',}}>
                         <Text style={{fontSize:scale(14),fontFamily:'Inter-Medium'}}>Munene</Text>
-                        <TouchableOpacity style={{ flexDirection: 'row' ,alignItems: 'center',padding:5}}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Profile')}
+                            style={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                padding: 5
+                            }}
+                        >
                             <Text style={{fontSize:12,fontFamily:'Inter-Light'}}>Manage Profile</Text>
                             <Icon name='navigate-next' size={18} />
                         </TouchableOpacity>
@@ -34,21 +43,28 @@ export default function CustomModal({ modalVisible, setModalVisible, navigation 
 
                 
                     <View style={{borderBottomWidth:scale(1),width: '100%'}}>
-                        <TouchableOpacity style={styles.wrapper}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('PastJobs')}
+                        style={styles.wrapper}
+                    >
                             <MaterialCommunityIcons name="wallet" size={25} />
-                            <Text>Past Jobs</Text>
+                            <Text style={styles.titles}>Past Jobs</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{borderBottomWidth:scale(1),width: '100%'}}>
-                        <TouchableOpacity style={styles.wrapper}>
+                    <TouchableOpacity style={styles.wrapper}
+                        onPress={() => navigation.navigate('Favourites')}
+                    >
                             <AntDesign name="wallet" size={25} />
-                            <Text>Favourites</Text>
+                            <Text style={styles.titles}>Favourites</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{borderBottomWidth:scale(1),width: '100%'}}>
-                        <TouchableOpacity style={styles.wrapper}>
+                    <TouchableOpacity style={styles.wrapper}
+                        
+                    >
                             <AntDesign name="setting" size={35} />
-                            <Text>Settings</Text>
+                            <Text style={styles.titles}>Settings</Text>
                         </TouchableOpacity>
                     </View>
                 <TouchableOpacity onPress={() => setModalVisible(false)}>
@@ -61,15 +77,15 @@ export default function CustomModal({ modalVisible, setModalVisible, navigation 
 
 const styles = ScaledSheet.create({
     screen: {
-        height: '350@s',
+        height: '300@s',
         width: '90%',
         left: '12@s',
         top: '60@s',
         borderRadius: '6@s',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         borderWidth: '1.5@s',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     buttons: {
         marginLeft: '12@s',
@@ -85,5 +101,9 @@ const styles = ScaledSheet.create({
     },
     image: {
 
+    },
+    titles: {
+        fontSize: '14@s',
+        marginHorizontal:'10@s'
     }
 });

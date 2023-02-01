@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }) {
                         <Text style={styles.firstThree}>Chap</Text>
                         <Text style={styles.rest}>Chap</Text>
                     </Text>
-                    <TouchableOpacity onPress={()=>setModalVisible(true)}>
+                    <TouchableOpacity onPress={()=>setModalVisible(!modalVisible)}>
                     <Image
                         source={IMAGES.User}
                         resizeMode="cover"

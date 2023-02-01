@@ -1,6 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {COLORS} from '../constants';
+import { ScaledSheet } from 'react-native-size-matters';
 
 export default function Btn({title, onPress, ...props}) {
   return (
@@ -9,14 +10,14 @@ export default function Btn({title, onPress, ...props}) {
     </TouchableOpacity>
   );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   button: {
     backgroundColor: COLORS.primary,
     width: '80%',
-    height: 43,
+    height: '43@s',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 5,
+    borderRadius: '5@s',
   },
   buttonText: {
     color: 'white',
