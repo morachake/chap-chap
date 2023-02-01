@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 import Header from '../components/Header'
 import CleanerCard from '../components/CleanerCard'
+import { ScaledSheet } from 'react-native-size-matters';
 export default function CleanerScreen() {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -30,17 +31,17 @@ export default function CleanerScreen() {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     heading: {
         fontFamily: 'Poppins-Light',
-        fontSize: 32,
+        fontSize: '32@s',
         color: '#000000',
-        marginHorizontal: 10,
+        marginHorizontal: '10@s',
     },
     subtitle: {
         fontFamily: 'Inter-Light',
-        fontSize: 14,
+        fontSize: '14@s',
         color: '#000000',
-        marginHorizontal: 10,
+        marginHorizontal: '10@s',
     }
 })
