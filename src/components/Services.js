@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScrollView, View, Text, Image, StyleSheet } from 'react-native'
 import servicesData from '../assets/Data/Data'
+import { ScaledSheet } from 'react-native-size-matters'
 export default function Services() {
     
     return (
@@ -29,17 +30,17 @@ export default function Services() {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
         justifyContent:'center',
-        borderRadius: 32,
+        borderRadius: '32@s',
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: '#111',
-        padding: 10
+        padding: '10@s'
     },
     image: {
-        width: 45,
-        height: 50,
+        width: '45@s',
+        height: '50@s',
     }
 })
