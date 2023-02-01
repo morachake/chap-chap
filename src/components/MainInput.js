@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TextInput, View, StyleSheet} from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
 export default function MainInput({label}) {
   return (
@@ -10,21 +11,21 @@ export default function MainInput({label}) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   container: {
     display: 'flex',
     width: '90%',
-    marginTop: 10,
+    marginTop: "10@s",
   },
   label: {
-    fontSize: 13,
+    fontSize: '13@s',
     fontFamily: 'Inter-Medium',
   },
   textInput: {
-    marginTop: 10,
+    marginTop: '10@s',
     borderColor: '#111',
-    borderWidth: 1,
-    borderRadius: 6,
+    borderWidth: '1@s',
+    borderRadius: '6@s',
     backgroundColor: '#FFFF',
   },
 });
