@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { scale } from 'react-native-size-matters';
 
 export default function Rating ({initialValue}) {
   const [rating, setRating] = useState(initialValue);
@@ -10,7 +11,7 @@ export default function Rating ({initialValue}) {
       const active = value <= rating;
       return (
         <TouchableOpacity key={index} onPress={() => setRating(value)}>
-          <Text style={{ color: active ? 'gold' : 'gray', fontSize:22 }}>
+          <Text style={{ color: active ? 'gold' : 'gray', fontSize:scale(22) }}>
             {active ? '★' : '☆'}
           </Text>
         </TouchableOpacity>
