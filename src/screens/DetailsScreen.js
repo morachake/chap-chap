@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
 import CalendarDatePicker from 'react-native-calendar-datepicker';
+import { ScaledSheet } from 'react-native-size-matters';
 export default function DetailsScreen() {
     const [date, setDate] = useState(new Date().toDateString());
     const [showCalendar, setShowCalendar] = useState(false);
@@ -57,7 +58,7 @@ export default function DetailsScreen() {
         </KeyboardAvoidingView>
     );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFF',
@@ -76,9 +77,9 @@ const styles = StyleSheet.create({
     },
     btn: {
         backgroundColor: COLORS.primary,
-        borderRadius: 8,
-        height: 45,
-        width: 150,
+        borderRadius: '8@s',
+        height: '45@s',
+        width: '150@s',
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -86,14 +87,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         display: 'flex',
         width: '90%',
-        marginTop: 10,
-        borderRadius: 6,
+        marginTop: '10@s',
+        borderRadius: '6@s',
         backgroundColor: '#FFFF',
     },
     input: {
         borderColor: '#111',
         borderWidth: 1,
-        borderRadius: 6,
+        borderRadius: '6@s',
     }
 });
 
