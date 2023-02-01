@@ -99,9 +99,6 @@ const styles = ScaledSheet.create({
         marginHorizontal: '20@s',
         padding:'10@s'
     },
-    image: {
-
-    },
     titles: {
         fontSize: '14@s',
         marginHorizontal:'10@s'

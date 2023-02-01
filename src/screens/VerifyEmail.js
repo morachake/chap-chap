@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
+import { ScaledSheet } from 'react-native-size-matters';
 export default function VerifyEmail() {
   return (
     <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
@@ -17,7 +18,7 @@ export default function VerifyEmail() {
     </View>
   );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   heading: {
     fontFamily: 'Inter-Bold',
     fontSize: 32,
