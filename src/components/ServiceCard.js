@@ -9,7 +9,13 @@ export default function ServiceCard() {
         <TouchableOpacity onPress={() => navigation.navigate('Details')}>
             <View style={styles.container}>
                 <View style={{borderRadius: scale(20)}}>
-                    <Image source={IMAGES.Cleaner} resizeMode='cover' style={{resizeMode :'cover', width: scale(150), height: '100%'}} />
+                    <Image source={IMAGES.Cleaner}
+                        resizeMode='cover'
+                        style={{
+                            //resizeMode: 'cover',
+                            width: scale(40),
+                            height: scale(40)
+                        }} />
                 </View>
                 <View style={{justifyContent:'center',marginLeft :15}}>
                     <Text style={styles.titles1}>10 Services Avalilable</Text>
@@ -22,7 +28,8 @@ export default function ServiceCard() {
 
 const styles = ScaledSheet.create({
     container: {
-        height:'90@s',
+        height: '65@s',
+        width: '65@s',
         flexDirection: 'row',
         backgroundColor: '#F5F5F5',
         marginHorizontal: '15@s',

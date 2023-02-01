@@ -84,7 +84,7 @@ const styles = ScaledSheet.create({
         borderRadius: '6@s',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        borderWidth: '1.5@s',
+        //borderWidth: '1.5@s',
         backgroundColor: 'white',
     },
     buttons: {
