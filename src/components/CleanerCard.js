@@ -52,7 +52,7 @@ const styles = ScaledSheet.create({
     container: {
         marginHorizontal: '10@s',
         marginBottom: '10@s',
-        borderWidth: '1@s',
+        borderWidth: 1,
         borderRadius: '12@s',
         borderColor: '#D9D9D9',
         flexDirection: 'row',

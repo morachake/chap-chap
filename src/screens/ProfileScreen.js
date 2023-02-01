@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import { IMAGES } from '../constants/index'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import UserDetailsCard from '../components/UserDetailsCard'
+import { ScaledSheet } from 'react-native-size-matters'
 export default function ProfileScreen() {
     return (
         <View style={{ flex: 1, backgroundColor: '#008AAD' }}>
@@ -31,34 +32,34 @@ export default function ProfileScreen() {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     username: {
         fontFamily: 'Poppins-Bold',
-        fontSize: 32,
+        fontSize: '32@s',
     },
     icons: {
-        marginHorizontal: 20
+        marginHorizontal: '20@s'
     },
     detailscard: {
         alignItems: 'center',
-        borderRadius: 8,
+        borderRadius: '8@s',
         flexDirection: 'row',
         //justifyContent: 'space-around',
         width: '90%',
         backgroundColor: '#F5F5F5',
-        height: 65,
-        marginTop: 15
+        height: '65@s',
+        marginTop: '15@s'
     },
     headlines: {
         color: '#000000',
-        padding: 3,
+        padding: '3@s',
     },
     btn: {
         backgroundColor: '#E8E8E8',
-        borderRadius: 8,
-        height: 45,
-        width: 150,
-        marginTop: 20,
+        borderRadius: '8@s',
+        height: '45@s',
+        width: '150@s',
+        marginTop: '20@s',
         alignItems: 'center',
         justifyContent: 'center'
     }

@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
 import { COLORS } from '../constants/index'
+import { ScaledSheet } from 'react-native-size-matters';
 export default function RegisterScreen({ navigation }) {
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
@@ -25,12 +26,12 @@ export default function RegisterScreen({ navigation }) {
         </View>
     );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     heading: {
         fontFamily: 'Poppins-Bold',
-        fontSize: 32,
+        fontSize: '32@s',
         color: '#000000',
-        margin: 20,
+        margin: '20@s',
     },
     btncontainer: {
         justifyContent: 'center',
@@ -39,12 +40,12 @@ const styles = StyleSheet.create({
         bottom: 0,
     },
     text: {
-        fontSize: 14,
+        fontSize: '14@s',
         color: '#000',
         paddingHorizontal: 5,
     },
     text2: {
-        fontSize: 14,
+        fontSize: '14@s',
         color: COLORS.primary,
     },
 });
