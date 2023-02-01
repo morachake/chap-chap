@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
 import { COLORS } from '../constants';
+import { ScaledSheet, scale } from 'react-native-size-matters';
 export default function LoginScreen({navigation}) {
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
@@ -13,7 +14,7 @@ export default function LoginScreen({navigation}) {
                 <MainInput label="New password" />
                 <MainInput label="Confirm password" />
             </View>
-            <View style={{ flexDirection: 'row', margin: 20 }}>
+            <View style={{ flexDirection: 'row', margin: scale(20) }}>
                 <Text style={styles.text}>Dont  have an account ?</Text>
                 <Text style={styles.text2} onPress={() => navigation.navigate('Register')}>Register</Text>
             </View>
@@ -26,12 +27,12 @@ export default function LoginScreen({navigation}) {
         </View>
     );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     heading: {
         fontFamily: 'Poppins-Bold',
-        fontSize: 32,
+        fontSize: '32@s',
         color: '#000000',
-        margin: 20,
+        margin: '20@s',
     },
     btncontainer: {
         justifyContent: 'center',
@@ -40,12 +41,12 @@ const styles = StyleSheet.create({
         bottom: 0,
     },
     text: {
-        fontSize: 14,
+        fontSize: '14@s',
         color: '#000',
-        paddingHorizontal: 5,
+        paddingHorizontal: '5@s',
     },
     text2: {
-        fontSize: 14,
+        fontSize: '14@s',
         color: COLORS.primary,
     },
 });
