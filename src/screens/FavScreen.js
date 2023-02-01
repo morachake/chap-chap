@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import JobCard from '../components/JobCard';
 import { COLORS } from '../constants/index';
+import { ScaledSheet } from 'react-native-size-matters';
 
 export default function FavScreen() {
     return (
@@ -26,18 +27,18 @@ export default function FavScreen() {
 }
 
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     header: {
-        fontSize: 32,
+        fontSize: '32@s',
         color: '#000000',
         fontFamily: 'Inter-Medium'
     },
     btn: {
         backgroundColor: COLORS.primary,
-        borderRadius: 8,
-        height: 45,
-        width: 150,
-        marginTop: 20,
+        borderRadius: '8@s',
+        height: '45@s',
+        width: '150@s',
+        marginTop: '20@s',
         alignItems: 'center',
         justifyContent: 'center'
     }
