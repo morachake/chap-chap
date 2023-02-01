@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 export default function Header({ pagename, iconright, iconLeft }) {
@@ -18,17 +19,17 @@ export default function Header({ pagename, iconright, iconLeft }) {
     </View>
   );
 }
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 10,
-    height: 54,
+    padding: '10@s',
+    height: '54@s',
   },
   pagename: {
     fontFamily: 'Inter-Bold',
-    fontSize: 18,
+    fontSize: '18@s',
   },
   icons: {},
 });
