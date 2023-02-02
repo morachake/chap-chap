@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS, IMAGES } from '../constants';
 import SearchInput from '../components/SearchInput';
 import Services from '../components/Services';
@@ -10,7 +10,7 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
-        <View style={{ flex: 1 }}>
+        <ScrollView showsHorizontalScrollIndicator={false} style={{ flex: 1 }}>
             <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
                 <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                 <View style={styles.header}>
@@ -28,7 +28,7 @@ export default function HomeScreen({ navigation }) {
                     </TouchableOpacity>
 
                 </View>
-                <View style={{ paddingHorizontal: 10 }}>
+                <View style={{ paddingHorizontal: 10 ,marginBottom:10}}>
                     <Text style={styles.user}>Hi James,</Text>
                     <Text style={styles.service}>What Services do you need today?</Text>
                     <SearchInput />
@@ -44,7 +44,7 @@ export default function HomeScreen({ navigation }) {
                 <Text style={styles.title}>Other Services</Text>
                 <ServiceCard />
             </View>
-        </View>
+        </ScrollView>
     );
 }
 

@@ -1,22 +1,22 @@
 import React from 'react'
 import { ScrollView, View, Text, Image, StyleSheet } from 'react-native'
 import servicesData from '../assets/Data/Data'
-import { ScaledSheet } from 'react-native-size-matters'
+import { ScaledSheet, scale } from 'react-native-size-matters'
 export default function Services() {
     
     return (
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
             {servicesData.map((item, index) => (
-                <View key={index} style={{ padding: 20, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <View key={index} style={{ marginHorizontal: scale(20), flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <View style={{
-                        borderRadius: 40, width: 60,
-                        height: 60, borderWidth: 1, borderColor: '#111', overflow: 'hidden'
+                        borderRadius: scale(20), width: scale(40),justifyContent:'center',alignItems:'center',
+                        height: scale(40), borderWidth: 1, borderColor: '#111', overflow: 'hidden'
                     }}>
                         <Image source={item.image} resizeMode='contain' style={styles.image} />
                     </View>
                     <Text
                         style={{
-                            marginTop: 10,
+                            marginTop: scale(7),
                             textAlign: 'center',
                             color: '#000000',
                             fontSize: 12
@@ -40,7 +40,7 @@ const styles = ScaledSheet.create({
         padding: '10@s'
     },
     image: {
-        width: '45@s',
-        height: '50@s',
+        width: '30@s',
+        height: '30@s',
     }
 })

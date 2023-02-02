@@ -12,9 +12,9 @@ export default function ServiceCard() {
                     <Image source={IMAGES.Cleaner}
                         resizeMode='cover'
                         style={{
-                            //resizeMode: 'cover',
-                            width: scale(40),
-                            height: scale(40)
+                            resizeMode: 'cover',
+                            width: scale(100),
+                            height: scale(65)
                         }} />
                 </View>
                 <View style={{justifyContent:'center',marginLeft :15}}>
@@ -29,7 +29,7 @@ export default function ServiceCard() {
 const styles = ScaledSheet.create({
     container: {
         height: '65@s',
-        width: '65@s',
+        width: '90%',
         flexDirection: 'row',
         backgroundColor: '#F5F5F5',
         marginHorizontal: '15@s',

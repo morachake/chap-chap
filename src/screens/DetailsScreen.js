@@ -47,8 +47,20 @@ export default function DetailsScreen({navigation}) {
             </View>
             <View style={styles.bottomContainer}>
                 <View>
-                    <Text style={{ fontSize: 17, color: '#00000080', fontFamily: 'Inter-Medium' }}>Total Price</Text>
-                    <Text style={{ fontSize: 15, color: '#00000080', fontFamily: 'Inter-Light' }}>KES 20300 - 20700</Text>
+                    <Text 
+                    style={{ 
+                        fontSize: 17,
+                        color: '#00000080', 
+                        fontFamily: 
+                        'Inter-Medium'
+                        }}
+                    >Total Price</Text>
+                    <Text 
+                    style={{ 
+                        fontSize: 15, color: 
+                        '#00000080', fontFamily: 
+                        'Inter-Light' }}
+                        >KES 20300 - 20700</Text>
                 </View>
                 <TouchableOpacity onPress={()=> navigation.navigate('Cleaner')} style={styles.btn}>
                     <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
