@@ -6,15 +6,15 @@ import { COLORS } from '../constants/index'
 import { ScaledSheet, scale } from 'react-native-size-matters';
 import Fontiso from 'react-native-vector-icons/Fontisto';
 import CustomCheck from '../components/CustomCheck';
+import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
-    const [date, setDate] = useState(new Date().toDateString());
-    const [showCalendar, setShowCalendar] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(new Date());
     const [houses, setHouses] = useState()
     const [rooms, setRooms] = useState()
     const [adress, setAdress] = useState()
     const [details, setDetails] = useState()
     const [checked, setChecked] = useState(false);
+    const [date, setDate] = useState(new Date())
+     const [open, setOpen] = useState(false)
     const handleSubmit = () => {
 
     }
@@ -27,12 +27,27 @@ export default function DetailsScreen({ navigation }) {
                 <MainInput label="Number of rooms" />
                 <MainInput label="Adress" />
                 <MainInput label="Any other Details" />
-                <View style={{ alignItems:'center',justifyContent:"center",marginTop:scale(5)}}>
+                <View style={{ alignItems:'center',justifyContent:"center",marginTop:scale(20),flexDirection:'row'}}>
                     <View style={styles.checkboxContainer}>
                         <Text style={styles.label}>Right Away</Text>
                         <CustomCheck value={checked} onValueChange={setChecked} />
                     </View>
-
+                    
+                    <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(true)} >
+                        <Text>{date ? date.toString(): "Book"}</Text>
+                            <DatePicker
+                                modal
+                                open={open}
+                                date={date}
+                                onConfirm={(date) => {
+                                setOpen(false)
+                                setDate(date)
+                                }}
+                                onCancel={() => {
+                                setOpen(false)
+                                }}
+                            />
+                        </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.bottomContainer}>
@@ -101,11 +116,12 @@ const styles = ScaledSheet.create({
     checkboxContainer: {
         alignItems:'center',
         flexDirection: 'row',
-        marginBottom: '20@s',
         justifyContent: 'center',
         borderWidth: 1,
         padding: 2,
-        height :'41@s'
+        height: '41@s',
+        flex:0.3,
+        borderRadius:'6@s'
     },
     checkbox: {
         alignSelf: 'center',
@@ -113,5 +129,16 @@ const styles = ScaledSheet.create({
     label: {
         margin: 8,
     },
+    calendaCont: {
+        alignItems:'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        borderWidth: 1,
+        padding: 2,
+        marginHorizontal:'8@s',
+        height: '41@s',
+        flex:0.7,
+        borderRadius:'6@s'
+    }
 });
 
