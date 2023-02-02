@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
-import CalendarDatePicker from 'react-native-calendar-datepicker';
-import { ScaledSheet } from 'react-native-size-matters';
-export default function DetailsScreen({navigation}) {
+import { ScaledSheet, scale } from 'react-native-size-matters';
+import Fontiso from 'react-native-vector-icons/Fontisto';
+import CustomCheck from '../components/CustomCheck';
+export default function DetailsScreen({ navigation }) {
     const [date, setDate] = useState(new Date().toDateString());
     const [showCalendar, setShowCalendar] = useState(false);
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -13,56 +14,46 @@ export default function DetailsScreen({navigation}) {
     const [rooms, setRooms] = useState()
     const [adress, setAdress] = useState()
     const [details, setDetails] = useState()
+    const [checked, setChecked] = useState(false);
     const handleSubmit = () => {
 
     }
     return (
         <KeyboardAvoidingView style={styles.container}>
-            <Header iconLeft="arrowleft"  />
+            <Header iconLeft="arrowleft" />
             <View style={styles.topContainer}>
                 <Text>This is the top container</Text>
                 <MainInput label="Type of House" onChangetext={text => setHouses(text)} />
                 <MainInput label="Number of rooms" />
                 <MainInput label="Adress" />
                 <MainInput label="Any other Details" />
-                {/* calendar input start */}
-                <View style={styles.calendar}>
-                    <TextInput
-                        style={styles.input}
-                        onFocus={() => setShowCalendar(true)}
-                        keyboardType="none"
-                        value={selectedDate.toDateString()}
-                    />
-                    {showCalendar && (
-                        <CalendarDatePicker
-                            onDateChange={date => {
-                                setSelectedDate(date);
-                                setShowCalendar(false);
-                            }}
-                            initialDate={selectedDate}
-                        />
-                    )}
+                <View style={{ alignItems:'center',justifyContent:"center",marginTop:scale(5)}}>
+                    <View style={styles.checkboxContainer}>
+                        <Text style={styles.label}>Right Away</Text>
+                        <CustomCheck value={checked} onValueChange={setChecked} />
+                    </View>
+
                 </View>
-                {/* calendar input end */}
             </View>
             <View style={styles.bottomContainer}>
                 <View>
-                    <Text 
-                    style={{ 
-                        fontSize: 17,
-                        color: '#00000080', 
-                        fontFamily: 
-                        'Inter-Medium'
+                    <Text
+                        style={{
+                            fontSize: scale(17),
+                            color: '#00000080',
+                            fontFamily:
+                                'Inter-Medium'
                         }}
                     >Total Price</Text>
-                    <Text 
-                    style={{ 
-                        fontSize: 15, color: 
-                        '#00000080', fontFamily: 
-                        'Inter-Light' }}
-                        >KES 20300 - 20700</Text>
+                    <Text
+                        style={{
+                            fontSize: scale(15), color:
+                                '#00000080', fontFamily:
+                                'Inter-Light'
+                        }}
+                    >KES 20300 - 20700</Text>
                 </View>
-                <TouchableOpacity onPress={()=> navigation.navigate('Cleaner')} style={styles.btn}>
+                <TouchableOpacity onPress={() => navigation.navigate('Cleaner')} style={styles.btn}>
                     <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
                 </TouchableOpacity>
             </View>
@@ -106,6 +97,21 @@ const styles = ScaledSheet.create({
         borderColor: '#111',
         borderWidth: 1,
         borderRadius: '6@s',
-    }
+    },
+    checkboxContainer: {
+        alignItems:'center',
+        flexDirection: 'row',
+        marginBottom: '20@s',
+        justifyContent: 'center',
+        borderWidth: 1,
+        padding: 2,
+        height :'41@s'
+    },
+    checkbox: {
+        alignSelf: 'center',
+    },
+    label: {
+        margin: 8,
+    },
 });
 
