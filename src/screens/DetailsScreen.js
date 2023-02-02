@@ -46,6 +46,7 @@ export default function DetailsScreen({ navigation }) {
                                 onCancel={() => {
                                 setOpen(false)
                                 }}
+                                androidVariant='iosClone'
                             />
                         </TouchableOpacity>
                 </View>
@@ -100,14 +101,6 @@ const styles = ScaledSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    calendar: {
-        borderWidth: 1,
-        display: 'flex',
-        width: '90%',
-        marginTop: '10@s',
-        borderRadius: '6@s',
-        backgroundColor: '#FFFF',
-    },
     input: {
         borderColor: '#111',
         borderWidth: 1,
@@ -122,12 +115,6 @@ const styles = ScaledSheet.create({
         height: '41@s',
         flex:0.3,
         borderRadius:'6@s'
-    },
-    checkbox: {
-        alignSelf: 'center',
-    },
-    label: {
-        margin: 8,
     },
     calendaCont: {
         alignItems:'center',
