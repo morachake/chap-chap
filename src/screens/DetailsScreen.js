@@ -1,55 +1,65 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
 import { ScaledSheet, scale } from 'react-native-size-matters';
-import Fontiso from 'react-native-vector-icons/Fontisto';
 import CustomCheck from '../components/CustomCheck';
 import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
     const [houses, setHouses] = useState()
-    const [rooms, setRooms] = useState()
-    const [adress, setAdress] = useState()
-    const [details, setDetails] = useState()
     const [checked, setChecked] = useState(false);
     const [date, setDate] = useState(new Date())
-     const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false)
     const handleSubmit = () => {
 
     }
     return (
+
         <KeyboardAvoidingView style={styles.container}>
             <Header iconLeft="arrowleft" />
+                <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
             <View style={styles.topContainer}>
-                <Text>This is the top container</Text>
                 <MainInput label="Type of House" onChangetext={text => setHouses(text)} />
                 <MainInput label="Number of rooms" />
                 <MainInput label="Adress" />
                 <MainInput label="Any other Details" />
-                <View style={{ alignItems:'center',justifyContent:"center",marginTop:scale(20),flexDirection:'row'}}>
-                    <View style={styles.checkboxContainer}>
-                        <Text style={styles.label}>Right Away</Text>
-                        <CustomCheck value={checked} onValueChange={setChecked} />
-                    </View>
-                    
-                    <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(true)} >
-                        <Text>{date ? date.toString(): "Book"}</Text>
+                <View>
+                    <Text style={{
+                        marginTop: scale(20),
+                        fontSize: scale(13),
+                        color: '#00000080',
+                        fontFamily: 'Inter-Medium'
+                    }}>
+                        Date And Time
+                    </Text>
+                    <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '90%', marginTop: scale(5) }}>
+
+                        <View style={styles.checkboxContainer}>
+                            <Text style={styles.label}>Right Away</Text>
+                            <CustomCheck value={checked} onValueChange={setChecked} />
+                        </View>
+
+                        <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(true)} >
+                            <Text>{date ? date.toString() : "Book"}</Text>
                             <DatePicker
                                 modal
                                 open={open}
                                 date={date}
                                 onConfirm={(date) => {
-                                setOpen(false)
-                                setDate(date)
+                                    setOpen(false)
+                                    setDate(date)
                                 }}
                                 onCancel={() => {
-                                setOpen(false)
+                                    setOpen(false)
                                 }}
                                 androidVariant='iosClone'
+                                mode="datetime"
                             />
                         </TouchableOpacity>
+                    </View>
                 </View>
+                <MainInput label="" />
             </View>
             <View style={styles.bottomContainer}>
                 <View>
@@ -57,10 +67,8 @@ export default function DetailsScreen({ navigation }) {
                         style={{
                             fontSize: scale(17),
                             color: '#00000080',
-                            fontFamily:
-                                'Inter-Medium'
-                        }}
-                    >Total Price</Text>
+                            fontFamily: 'Inter-Medium'
+                        }}>Total Price</Text>
                     <Text
                         style={{
                             fontSize: scale(15), color:
@@ -69,11 +77,15 @@ export default function DetailsScreen({ navigation }) {
                         }}
                     >KES 20300 - 20700</Text>
                 </View>
-                <TouchableOpacity onPress={() => navigation.navigate('Cleaner')} style={styles.btn}>
-                    <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
-                </TouchableOpacity>
-            </View>
+                    <View style={{position:'relative'}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Cleaner')} style={styles.btn}>
+                            <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+               
         </KeyboardAvoidingView>
+
     );
 }
 const styles = ScaledSheet.create({
@@ -91,7 +103,8 @@ const styles = ScaledSheet.create({
         backgroundColor: '#C4F3FF',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        alignItems: 'center'
+        alignItems: 'center',
+        position:'relative'
     },
     btn: {
         backgroundColor: COLORS.primary,
@@ -107,25 +120,30 @@ const styles = ScaledSheet.create({
         borderRadius: '6@s',
     },
     checkboxContainer: {
-        alignItems:'center',
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         borderWidth: 1,
         padding: 2,
         height: '41@s',
-        flex:0.3,
-        borderRadius:'6@s'
+        flex: 0.3,
+        borderRadius: '6@s'
     },
     calendaCont: {
-        alignItems:'center',
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         borderWidth: 1,
         padding: 2,
-        marginHorizontal:'8@s',
+        marginHorizontal: '8@s',
         height: '41@s',
-        flex:0.7,
-        borderRadius:'6@s'
+        flex: 0.7,
+        borderRadius: '6@s'
+    },
+    label: {
+        fontSize: scale(12),
+        color: '#00000080',
+        fontFamily: 'Inter-Medium'
     }
 });
 

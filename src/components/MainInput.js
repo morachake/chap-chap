@@ -15,7 +15,7 @@ const styles = ScaledSheet.create({
   container: {
     display: 'flex',
     width: '90%',
-    marginTop: "10@s",
+    marginTop: "8@s",
   },
   label: {
     fontSize: '13@s',
