@@ -12,21 +12,24 @@ export default function CleanerCard() {
             name: "Moses ",
             distance: '20',
             rating: '4',
-            image: require('../assets/images/provider.png')
+            image: require('../assets/images/provider.png'),
+            detail:'has been providing cleaning services for 5 years and has received high ratings from clients for their quality of work and professionalism.has been providing cleaning services for   5 years and has received high ratings from clients for their quality of work and professionalism.'
         },
         {
             index: '2',
             name: "Phineas ",
             distance: '20',
             rating: '3',
-            image: require('../assets/images/provider.png')
+            image: require('../assets/images/provider.png'),
+            detail:'has been providing cleaning services for 5 years and has received high ratings from clients for their quality of work and professionalism.has been providing cleaning services for   5 years and has received high ratings from clients for their quality of work and professionalism.'
         },
         {
             index: '2',
             name: "Munene ",
             distance: '20',
             rating: '1',
-            image: require('../assets/images/provider.png')
+            image: require('../assets/images/provider.png'),
+            detail:'has been providing cleaning services for 5 years and has received high ratings from clients for their quality of work and professionalism.has been providing cleaning services for   5 years and has received high ratings from clients for their quality of work and professionalism.'
         },
     ];
     return (
