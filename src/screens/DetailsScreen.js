@@ -7,24 +7,40 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 import CustomCheck from '../components/CustomCheck';
 import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
-    const [houses, setHouses] = useState('')
-    const [checked, setChecked] = useState(false);
-    const [date, setDate] = useState(new Date())
-    const [open, setOpen] = useState(false)
-    const [rooms, setRooms] = useState('')
-    const [adress, setAdress] = useState('')
-    const handleSubmit = () => {
-
+    const [state, setState] = useState({
+        houses: '',
+        checked: false,
+        open: false,
+        rooms: '',
+        adress: '',
+        details:'',
+        date:new Date(),
+    })
+    const handleSubmit = () => { 
+        navigation.navigate('Cleaner',{state})
     }
     return (
 
         <KeyboardAvoidingView style={styles.container}>
             <Header iconLeft="arrowleft" />
                 <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
-            <View style={styles.topContainer}>
-                <MainInput label="Type of House" onChangeText={(text) => setHouses(text)} />                <MainInput label="Number of rooms" onChangeText={(text) => setRooms(text) } />
-                <MainInput label="Adress" onChangeText={(text)=> setAdress(text)} />
-                <MainInput label="Any other Details" />
+            <ScrollView style={styles.topContainer}>
+                <MainInput
+                    label="Type of House"
+                    onChangeText={(text) => setState({ ...state, houses: text })}
+                />
+                <MainInput
+                    label="Number of rooms"
+                    onChangeText={(text) => setState({...state, rooms:text})}
+                />
+                <MainInput
+                    label="Adress"
+                    onChangeText={(text) => setState({...state,adress:text})}
+                />
+                <MainInput
+                    label="Any other Details"
+                    onChangeText={(text) => setState({...state, details:text})}
+                />
                 <View>
                     <Text style={{
                         marginTop: scale(20),
@@ -61,7 +77,7 @@ export default function DetailsScreen({ navigation }) {
                     </View>
                 </View>
                 <MainInput label="" />
-            </View>
+            </ScrollView>
             <View style={styles.bottomContainer}>
                 <View>
                     <Text
@@ -79,7 +95,7 @@ export default function DetailsScreen({ navigation }) {
                     >KES 20300 - 20700</Text>
                 </View>
                     <View style={{position:'relative'}}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Cleaner')} style={styles.btn}>
+                        <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
                             <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
                         </TouchableOpacity>
                     </View>
@@ -97,7 +113,7 @@ const styles = ScaledSheet.create({
     topContainer: {
         flex: 0.9,
         //justifyContent: 'center',
-        alignItems: 'center'
+        //alignItems: 'center'
     },
     bottomContainer: {
         flex: 0.1,
