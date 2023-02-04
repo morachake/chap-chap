@@ -18,6 +18,7 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '5@s',
+    
   },
   buttonText: {
     color: 'white',

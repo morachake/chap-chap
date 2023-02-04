@@ -16,14 +16,14 @@ export default function CleanerCard() {
         },
         {
             index: '2',
-            name: "Moses ",
+            name: "Phineas ",
             distance: '20',
             rating: '3',
             image: require('../assets/images/provider.png')
         },
         {
             index: '2',
-            name: "Moses ",
+            name: "Munene ",
             distance: '20',
             rating: '1',
             image: require('../assets/images/provider.png')
@@ -34,7 +34,7 @@ export default function CleanerCard() {
             {cleanerData.map((item, index) => (
                 <TouchableOpacity
                     
-                    onPress={() => navigation.navigate('SingleCleaner')}
+                    onPress={() => navigation.navigate('SingleCleaner',{item :item})}
                     key={index}
                     style={styles.container}
                 >
@@ -44,7 +44,7 @@ export default function CleanerCard() {
                     />
                     <View style={{padding:10}}>
                         <Text style={styles.textContainer}>{item.name}</Text>
-                        <Text style={styles.textContainer}>{item.distance}</Text>
+                        <Text style={styles.textContainer}>Away {item.distance}</Text>
                         <Text style={styles.textContainer}>
                             <Rating initialValue={item.rating} />
                         </Text>
