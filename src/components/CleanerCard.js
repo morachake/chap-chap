@@ -3,8 +3,9 @@ import { View, ScrollView, StyleSheet, Image, Text,TouchableOpacity } from 'reac
 import cleanerData from '../assets/Data/Data'
 import Rating from './Rating';
 import { ScaledSheet ,scale} from 'react-native-size-matters';
+import { useNavigation } from '@react-navigation/native';
 export default function CleanerCard() {
-
+    const navigation = useNavigation();
     const cleanerData = [
         {
             index: '1',
@@ -31,7 +32,12 @@ export default function CleanerCard() {
     return (
         <ScrollView>
             {cleanerData.map((item, index) => (
-                <TouchableOpacity key={index} style={styles.container} >
+                <TouchableOpacity
+                    
+                    onPress={() => navigation.navigate('SingleCleaner')}
+                    key={index}
+                    style={styles.container}
+                >
                     <Image source={item.image}
                         resizeMode="cover"
                         style={{ width: scale(100), height: scale(100) ,margin:scale(10)}}

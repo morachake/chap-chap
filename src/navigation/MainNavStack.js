@@ -12,6 +12,7 @@ import FavScreen from "../screens/FavScreen";
 import PastJobsScreen from "../screens/PastJobsScreen";
 import ResetPassword from "../screens/ResetPassScreen";
 import VerifyEmail from "../screens/VerifyEmail";
+import SingleCleanerScreen from "../screens/SingleCleanerScreen";
 const Stack = createNativeStackNavigator();
 
 const MainNavStack = () => {
@@ -71,6 +72,11 @@ const MainNavStack = () => {
                  <Stack.Screen
                     name="Verify"
                     component={VerifyEmail}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="SingleCleaner"
+                    component={SingleCleanerScreen}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
