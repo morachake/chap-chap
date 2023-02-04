@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TextInput, View, StyleSheet} from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
-export default function MainInput({label}) {
+export default function MainInput({label,...props}) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>

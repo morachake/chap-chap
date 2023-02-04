@@ -7,10 +7,12 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 import CustomCheck from '../components/CustomCheck';
 import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
-    const [houses, setHouses] = useState()
+    const [houses, setHouses] = useState('')
     const [checked, setChecked] = useState(false);
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
+    const [rooms, setRooms] = useState('')
+    const [adress, setAdress] = useState('')
     const handleSubmit = () => {
 
     }
@@ -20,9 +22,8 @@ export default function DetailsScreen({ navigation }) {
             <Header iconLeft="arrowleft" />
                 <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
             <View style={styles.topContainer}>
-                <MainInput label="Type of House" onChangetext={text => setHouses(text)} />
-                <MainInput label="Number of rooms" />
-                <MainInput label="Adress" />
+                <MainInput label="Type of House" onChangeText={(text) => setHouses(text)} />                <MainInput label="Number of rooms" onChangeText={(text) => setRooms(text) } />
+                <MainInput label="Adress" onChangeText={(text)=> setAdress(text)} />
                 <MainInput label="Any other Details" />
                 <View>
                     <Text style={{

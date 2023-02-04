@@ -45,7 +45,7 @@ export default function SingleCleanerScreen({ route }) {
                                     style={styles.closeButton}
                                     onPress={() => setModalVisible(false)}
                                 >
-                                        <AntDesign size={28} name='close' />
+                                        <AntDesign size={28} name='close' color='#00748D' />
                                     </TouchableOpacity>
                                     
 
