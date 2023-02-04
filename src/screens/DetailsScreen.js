@@ -41,7 +41,7 @@ export default function DetailsScreen({ navigation }) {
                         </View>
 
                         <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(true)} >
-                            <Text>{date ? date.toString() : "Book"}</Text>
+                            <Text>{date ? date.toString() : "Schedule"}</Text>
                             <DatePicker
                                 modal
                                 open={open}

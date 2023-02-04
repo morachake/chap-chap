@@ -16,6 +16,7 @@ export default function CleanerScreen() {
             {isLoading ? (
                 <View style={{ alignItems: 'center' }}>
                     <Text>Searching Cleaners </Text>
+                    <Text>This may take 1-2 minutes please be patient</Text>
                     <ActivityIndicator size="large" color="#00748D" />
                 </View>
             ) : (
