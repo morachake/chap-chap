@@ -43,7 +43,7 @@ export default function CleanerCard() {
                 >
                     <Image source={item.image}
                         resizeMode="cover"
-                        style={{ width: scale(100), height: scale(100) ,margin:scale(10)}}
+                        style={{ width: scale(90), height: scale(90) ,margin:scale(10)}}
                     />
                     <View style={{padding:10}}>
                         <Text style={styles.textContainer}>{item.name}</Text>

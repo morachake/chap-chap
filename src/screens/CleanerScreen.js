@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 import Header from '../components/Header'
 import CleanerCard from '../components/CleanerCard'
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet ,scale} from 'react-native-size-matters';
 export default function CleanerScreen() {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -15,8 +15,8 @@ export default function CleanerScreen() {
             <Header iconLeft="arrowleft" />
             {isLoading ? (
                 <View style={{ alignItems: 'center' }}>
-                    <Text>Searching Cleaners </Text>
-                    <Text>This may take 1-2 minutes please be patient</Text>
+                    <Text style={{fontSize:scale(32)}}>Finding Cleaners </Text>
+                    <Text style={{fontSize:scale(14)}}>This may take 1-2 minutes please be patient</Text>
                     <ActivityIndicator size="large" color="#00748D" />
                 </View>
             ) : (
