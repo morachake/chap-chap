@@ -9,22 +9,25 @@ import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
     const [state, setState] = useState({
         houses: '',
-        checked: false,
-        open: false,
         rooms: '',
         adress: '',
         details:'',
         date:new Date(),
-    })
+      });
+    const [open,setOpen]= useState(false)
+    const [checked, setChecked] = useState(false);
+    const [date,setDate] = useState(new Date())
     const handleSubmit = () => { 
         navigation.navigate('Cleaner',{state})
     }
     return (
 
-        <KeyboardAvoidingView style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Header iconLeft="arrowleft" />
                 <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
-            <ScrollView style={styles.topContainer}>
+                
+            <View style={styles.topContainer}>
+                
                 <MainInput
                     label="Type of House"
                     onChangeText={(text) => setState({ ...state, houses: text })}
@@ -57,8 +60,8 @@ export default function DetailsScreen({ navigation }) {
                             <CustomCheck value={checked} onValueChange={setChecked} />
                         </View>
 
-                        <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(true)} >
-                            <Text>{date ? date.toString() : "Schedule"}</Text>
+                        <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(!open)} >
+                            <Text>{date ? date.toLocaleString() : "Schedule"}</Text>
                             <DatePicker
                                 modal
                                 open={open}
@@ -77,7 +80,7 @@ export default function DetailsScreen({ navigation }) {
                     </View>
                 </View>
                 <MainInput label="" />
-            </ScrollView>
+            </View>
             <View style={styles.bottomContainer}>
                 <View>
                     <Text
@@ -94,7 +97,7 @@ export default function DetailsScreen({ navigation }) {
                         }}
                     >KES 20300 - 20700</Text>
                 </View>
-                    <View style={{position:'relative'}}>
+                    <View >
                         <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
                             <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
                         </TouchableOpacity>
@@ -107,27 +110,29 @@ export default function DetailsScreen({ navigation }) {
 }
 const styles = ScaledSheet.create({
     container: {
-        flex: 1,
+       // flex: 1,
         backgroundColor: '#FFFF',
     },
     topContainer: {
-        flex: 0.9,
+        //flex: 0.9,
         //justifyContent: 'center',
-        //alignItems: 'center'
+        alignItems: 'center'
     },
     bottomContainer: {
-        flex: 0.1,
+        bottom: '-60@s',
+        width: '100%',
+        height:95,
         backgroundColor: '#C4F3FF',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        position:'relative'
+        //position:'relative'
     },
     btn: {
         backgroundColor: COLORS.primary,
         borderRadius: '8@s',
-        height: '45@s',
-        width: '150@s',
+        height: '40@s',
+        width: '130@s',
         alignItems: 'center',
         justifyContent: 'center'
     },
