@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
-import { View, Text, Image, Modal, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Image, Modal, Button, TouchableOpacity, ActivityIndicator } from 'react-native'
 import Header from '../components/Header'
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import Rating from '../components/Rating'
 import Btn from '../components/Btn'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import { useNavigation } from '@react-navigation/native'
 
 export default function SingleCleanerScreen({ route }) {
+    const navigation = useNavigation();
     const { item } = route.params
     const [isModalVisible, setModalVisible] = useState(false);
+    const [loading,setLoading]= useState(false);
+    const handlePress = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setModalVisible(false);
+            setLoading(false);
+            navigation.navigate('Home');
+        },2000)        
+    }
     return (
         <View>
             <Header iconLeft="arrowleft" />
@@ -35,35 +46,36 @@ export default function SingleCleanerScreen({ route }) {
                 </Text>
                 <Btn title="Confirm Selection" onPress={() => setModalVisible(true)} />
                 {/* cleaner modal start */}
-                <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <Button title="Show Modal" onPress={() => setModalVisible(true)} />
                     <Modal animationType="slide" transparent={true} visible={isModalVisible}>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ backgroundColor: 'white', height: scale(250), width: scale(300), padding: scale(24), borderRadius: scale(8), }}>
-                               
+                            <View style={{ backgroundColor: 'white', height: scale(250), width: scale(300), padding: scale(4), borderRadius: scale(8), }}>
+
                                 <TouchableOpacity
                                     style={styles.closeButton}
                                     onPress={() => setModalVisible(false)}
                                 >
-                                        <AntDesign size={28} name='close' color='#00748D' />
-                                    </TouchableOpacity>
-                                    
+                                    <AntDesign size={28} name='close' color='#00748D' />
+                                </TouchableOpacity>
 
-                                
-                                <View style={{flexDirection:'row',justifyContent: 'space-around',alignItems: 'center'}}>
+
+
+                                <View style={{ flexDirection: 'column',padding:scale(4), justifyContent: 'space-around', alignItems: 'center' }}>
                                     <Image source={item.image} resizeMode="cover" style={styles.imagesmall} />
+                                    <Text style={{fontSize:scale(12),padding:scale(3)}}>You selected {item.name} </Text>
+                                    <Text style={{ fontSize: scale(14), padding: scale(3) }}>To clean 10 Rooms</Text>
+                                    <Text style={{fontSize:scale(14),padding:scale(3)}}>At Kilimani 400020</Text>
+                                    <Text style={{fontSize:scale(14),padding:scale(3)}}>Are you sure you want ot continue</Text>
                                 </View>
-                                <Text>You selected {item.name} </Text>
-                                <Text>Are you sure you want ot continue</Text>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                    
-                                <Button title="Cancel" onPress={() => setModalVisible(false)} />
-                                <Button title="Continue" onPress={() => setModalVisible(false)} />
+                                
+                                <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:scale(8) }}>
+                                    <Btn title={loading ? <ActivityIndicator size='large' color ='#FFFF'/>:'Confirm'} onPress={handlePress} />
                                 </View>
                             </View>
                         </View>
                     </Modal>
-                    </View>
+                </View>
             </View>
             {/* cleaner modal end */}
         </View>
@@ -82,7 +94,7 @@ const styles = ScaledSheet.create({
         margin: scale(10),
         borderRadius: 80,
     },
-    imagesmall :{
+    imagesmall: {
         width: scale(60),
         height: scale(60),
         margin: scale(10),
