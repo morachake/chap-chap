@@ -11,7 +11,10 @@ export default function RegisterScreen({ navigation }) {
             <Header iconLeft="arrowleft" onPress={() => navigation.goBack} />
             <Text style={styles.heading}>Register</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <MainInput label="Your Name" />
+                <MainInput
+                    errorMessage="invalid name"
+                    label="Your Name"
+                />
                 <MainInput label="Your Email Adress" />
             </View>
             <View style={styles.btncontainer}>

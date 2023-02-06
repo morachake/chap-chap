@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text, TextInput, View, StyleSheet} from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
-export default function MainInput({label,...props}) {
+export default function MainInput({ label, errorMessage, ...props }) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-          <TextInput style={styles.textInput}  />
+          <TextInput
+              style={styles.textInput}
+              placeholder={errorMessage || ''}
+              placeholderTextColor={error ? 'red' : '#000000'}
+          />
     </View>
   );
 }
@@ -30,5 +34,9 @@ const styles = ScaledSheet.create({
     borderRadius: '6@s',
     backgroundColor: '#FFFF',
     color: '#000000'
+  },
+  errors: {
+    color: 'red',
+    marginTop: '5@s',
   },
 });
