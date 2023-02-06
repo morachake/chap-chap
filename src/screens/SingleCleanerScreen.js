@@ -11,14 +11,14 @@ export default function SingleCleanerScreen({ route }) {
     const navigation = useNavigation();
     const { item } = route.params
     const [isModalVisible, setModalVisible] = useState(false);
-    const [loading,setLoading]= useState(false);
+    const [loading, setLoading] = useState(false);
     const handlePress = () => {
         setLoading(true);
         setTimeout(() => {
             setModalVisible(false);
             setLoading(false);
             navigation.navigate('Home');
-        },2000)        
+        }, 2000)
     }
     return (
         <View>
@@ -46,9 +46,8 @@ export default function SingleCleanerScreen({ route }) {
                 </Text>
                 <Btn title="Confirm Selection" onPress={() => setModalVisible(true)} />
                 {/* cleaner modal start */}
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Button title="Show Modal" onPress={() => setModalVisible(true)} />
-                    <Modal animationType="slide" transparent={true} visible={isModalVisible}>
+                <Modal animationType="slide" transparent={true} visible={isModalVisible}>
+                    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ backgroundColor: 'white', height: scale(250), width: scale(300), padding: scale(4), borderRadius: scale(8), }}>
 
@@ -61,21 +60,21 @@ export default function SingleCleanerScreen({ route }) {
 
 
 
-                                <View style={{ flexDirection: 'column',padding:scale(4), justifyContent: 'space-around', alignItems: 'center' }}>
+                                <View style={{ flexDirection: 'column', padding: scale(4), justifyContent: 'space-around', alignItems: 'center' }}>
                                     <Image source={item.image} resizeMode="cover" style={styles.imagesmall} />
-                                    <Text style={{fontSize:scale(12),padding:scale(3)}}>You selected {item.name} </Text>
+                                    <Text style={{ fontSize: scale(12), padding: scale(3) }}>You selected {item.name} </Text>
                                     <Text style={{ fontSize: scale(14), padding: scale(3) }}>To clean 10 Rooms</Text>
-                                    <Text style={{fontSize:scale(14),padding:scale(3)}}>At Kilimani 400020</Text>
-                                    <Text style={{fontSize:scale(14),padding:scale(3)}}>Are you sure you want ot continue</Text>
+                                    <Text style={{ fontSize: scale(14), padding: scale(3) }}>At Kilimani 400020</Text>
+                                    <Text style={{ fontSize: scale(14), padding: scale(3) }}>Are you sure you want ot continue</Text>
                                 </View>
-                                
-                                <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:scale(8) }}>
-                                    <Btn title={loading ? <ActivityIndicator size='large' color ='#FFFF'/>:'Confirm'} onPress={handlePress} />
+
+                                <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: scale(8) }}>
+                                    <Btn title={loading ? <ActivityIndicator size='large' color='#FFFF' /> : 'Confirm'} onPress={handlePress} />
                                 </View>
                             </View>
                         </View>
-                    </Modal>
-                </View>
+                    </View>
+                </Modal>
             </View>
             {/* cleaner modal end */}
         </View>

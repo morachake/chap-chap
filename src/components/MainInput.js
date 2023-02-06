@@ -19,6 +19,7 @@ const styles = ScaledSheet.create({
   },
     label: {
    // backgroundColor:'#EAFFFF',
+    color:'#000000',
     fontSize: '13@s',
     fontFamily: 'Inter-Medium',
   },
@@ -28,5 +29,6 @@ const styles = ScaledSheet.create({
     borderWidth: '1@s',
     borderRadius: '6@s',
     backgroundColor: '#FFFF',
+    color: '#000000'
   },
 });

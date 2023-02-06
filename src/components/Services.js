@@ -18,8 +18,8 @@ export default function Services() {
                         style={{
                             marginTop: scale(7),
                             textAlign: 'center',
-                            color: '#000000',
-                            fontSize: 12
+                            color: 'rgba(0, 0, 0, 0.6)',
+                            fontSize: 12,
                         }}
                     >
                         {item.title}

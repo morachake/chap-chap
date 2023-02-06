@@ -119,7 +119,7 @@ const styles = ScaledSheet.create({
         alignItems: 'center'
     },
     bottomContainer: {
-        bottom: '-60@s',
+        bottom: 0,
         width: '100%',
         height:95,
         backgroundColor: '#C4F3FF',

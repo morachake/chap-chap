@@ -11,7 +11,7 @@ export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <ScrollView showsHorizontalScrollIndicator={false} style={{ flex: 1,backgroundColor: '#FFFF' }}>
-            <View style={{ backgroundColor: '#EAFFFF' }}>
+            <View style={styles.topcontainer}>
                 <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                 <View style={styles.header}>
                     <Text style={{ justifyContent: 'center' }}>
@@ -30,7 +30,11 @@ export default function HomeScreen({ navigation }) {
                 </View>
                 <View style={{ paddingHorizontal: 10 ,marginBottom:10}}>
                     <Text style={styles.user}>Hi James,</Text>
-                    <Text style={styles.service}>What Services do you need today?</Text>
+                    <Text style={styles.service}>
+                        What 
+                        <Text style={{ fontFamily: 'Inter-Bold',color: 'rgba(4, 23, 71, 0.8)' }}>
+                            Services
+                        </Text> do you need today?</Text>
                     <SearchInput />
                 </View>
             </View>
@@ -61,20 +65,21 @@ const styles = ScaledSheet.create({
     },
     topcontainer: {
         backgroundColor: COLORS.lightPrimary,
+        height: '45%'
     },
     firstThree: {
         color: '#00748D',
-        fontFamily: 'Inter-Medium',
+        fontFamily: 'Inter-Bold',
         fontSize: '18@s',
     },
     rest: {
         color: '#041747',
-        fontFamily: 'Inter-Medium',
+        fontFamily: 'Inter-Bold',
         fontSize: '18@s',
     },
     user: {
         paddingTop: '10@s',
-        fontFamily: 'Inter-Medium',
+        fontFamily: 'Inter-Bold',
         fontSize: '12@s',
         color: '##000000',
     },
@@ -87,6 +92,7 @@ const styles = ScaledSheet.create({
         fontFamily: 'Inter-Medium',
         fontSize: '16@s',
         color: '#000000',
-        margin: '10@s'
+        margin: '10@s',
+        
     }
 });
