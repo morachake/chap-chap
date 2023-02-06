@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
@@ -6,6 +6,11 @@ import Btn from '../components/Btn';
 import { COLORS } from '../constants/index'
 import { ScaledSheet } from 'react-native-size-matters';
 export default function RegisterScreen({ navigation }) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const handleSubmit=()=>{
+
+    }
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
             <Header iconLeft="arrowleft" onPress={() => navigation.goBack} />
@@ -19,7 +24,7 @@ export default function RegisterScreen({ navigation }) {
             </View>
             <View style={styles.btncontainer}>
                 <Btn
-                    onPress={()=>navigation.navigate("Home")}
+                    onPress={handleSubmit}
                     title="Register" />
                 <View style={{ flexDirection: 'row', marginTop: 5 }}>
                     <Text style={styles.text}>Already have an account</Text>

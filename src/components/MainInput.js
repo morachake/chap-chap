@@ -9,7 +9,7 @@ export default function MainInput({ label, errorMessage, ...props }) {
           <TextInput
               style={styles.textInput}
               placeholder={errorMessage || ''}
-              placeholderTextColor={error ? 'red' : '#000000'}
+              placeholderTextColor={errorMessage ? 'red' : '#000000'}
           />
     </View>
   );
