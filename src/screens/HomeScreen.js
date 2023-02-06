@@ -38,7 +38,7 @@ export default function HomeScreen({ navigation }) {
                     <SearchInput />
                 </View>
             </View>
-            <View style={{backgroundColor: '#FFFFFF' }}>
+            <View style={styles.bottomcontainer}>
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={styles.title}>Categories</Text>
                     <Services />
@@ -54,7 +54,8 @@ export default function HomeScreen({ navigation }) {
 
 const styles = ScaledSheet.create({
     container: {
-        display: 'flex',
+       // flex:1,
+        //display: 'flex',
         backgroundColor: '#FFFFFF',
     },
     header: {
@@ -66,6 +67,11 @@ const styles = ScaledSheet.create({
     topcontainer: {
         backgroundColor: COLORS.lightPrimary,
         height: '45%'
+    },
+    bottomcontainer: {
+      //  height: '55%',
+        justifyContent:'space-between'
+        
     },
     firstThree: {
         color: '#00748D',

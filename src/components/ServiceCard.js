@@ -14,7 +14,7 @@ export default function ServiceCard() {
                         style={{
                             resizeMode: 'cover',
                             width: scale(100),
-                            height: scale(65)
+                            height: '100%'
                         }} />
                 </View>
                 <View style={{justifyContent:'center',marginLeft :15}}>
@@ -28,7 +28,7 @@ export default function ServiceCard() {
 
 const styles = ScaledSheet.create({
     container: {
-        height: '65@s',
+        height: '95@s',
         width: '90%',
         flexDirection: 'row',
         backgroundColor: '#F5F5F5',
