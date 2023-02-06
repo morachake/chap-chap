@@ -6,11 +6,11 @@ import Icon from 'react-native-vector-icons/Feather';
 export default function SearchInput() {
     const [searchText, setSearchText] = useState('');
     return (
-        <View style={{ width: '100%', backgroundColor: '#FFFF' }}>
+        <View style={{ backgroundColor: '#FFFF' }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TextInput
-                    style={{ flex: 1, borderRadius: scale(25), color: '#000000',fontFamily:'Inter-Light' }}
-                    placeholder="What are you looking for"
+                    style={{ flex: 1, borderRadius: scale(25), color: 'rgba(0, 0, 0, 0.7)',fontFamily:'Inter-Light'}}
+                    placeholder="Type here"
                     value={searchText}
                     onChangeText={text => setSearchText(text)}
                 />

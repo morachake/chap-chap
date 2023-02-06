@@ -10,7 +10,7 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
-        <ScrollView showsHorizontalScrollIndicator={false} style={{ flex: 1,backgroundColor: '#FFFF' }}>
+        <View style={{ flex: 1,backgroundColor: '#FFFF' }}>
             <View style={styles.topcontainer}>
                 <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                 <View style={styles.header}>
@@ -22,18 +22,18 @@ export default function HomeScreen({ navigation }) {
                         <Image
                             source={IMAGES.User}
                             resizeMode="cover"
-                            style={{ width: scale(40), height: scale(40) }}
+                            style={{ width: scale(40), height: scale(40)  }}
 
                         />
                     </TouchableOpacity>
 
                 </View>
-                <View style={{ paddingHorizontal: 10 ,marginBottom:10}}>
+                <View style={{ marginBottom:10}}>
                     <Text style={styles.user}>Hi James,</Text>
                     <Text style={styles.service}>
-                        What 
-                        <Text style={{ fontFamily: 'Inter-Bold',color: 'rgba(4, 23, 71, 0.8)' }}>
-                            Services
+                        What  
+                         <Text style={{ fontFamily: 'Inter-Bold',color: 'rgba(4, 23, 71, 0.8)' }}>
+                              services
                         </Text> do you need today?</Text>
                     <SearchInput />
                 </View>
@@ -48,25 +48,27 @@ export default function HomeScreen({ navigation }) {
                 <Text style={styles.title}>Other Services</Text>
                 <ServiceCard />
             </View>
-        </ScrollView>
+        </View>
     );
 }
 
 const styles = ScaledSheet.create({
     container: {
-       // flex:1,
-        //display: 'flex',
+        flex: 1,
+        pointerEvents: 'none',
         backgroundColor: '#FFFFFF',
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: '10@s',
-        padding: '10@s',
+        padding: '1@s',
     },
     topcontainer: {
+        justifyContent: 'space-evenly',
         backgroundColor: COLORS.lightPrimary,
-        height: '45%'
+        height: '40%',
+        padding:'20@s'
     },
     bottomcontainer: {
       //  height: '55%',
@@ -90,7 +92,7 @@ const styles = ScaledSheet.create({
         color: '##000000',
     },
     service: {
-        paddingTop: '10@s',
+        paddingVertical: '10@s',
         fontSize: '24@s',
         fontFamily: 'Inter-Medium',
     },
@@ -99,6 +101,9 @@ const styles = ScaledSheet.create({
         fontSize: '16@s',
         color: '#000000',
         margin: '10@s',
+        borderTopLeftRadius: 12,
+        borderBottomLeftRadius: 12,
+        overflow: "hidden"
         
     }
 });

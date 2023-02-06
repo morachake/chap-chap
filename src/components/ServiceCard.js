@@ -11,11 +11,7 @@ export default function ServiceCard() {
                 <View style={{borderRadius: scale(20)}}>
                     <Image source={IMAGES.Cleaner}
                         resizeMode='cover'
-                        style={{
-                            resizeMode: 'cover',
-                            width: scale(100),
-                            height: '100%'
-                        }} />
+                        style={styles.image} />
                 </View>
                 <View style={{justifyContent:'center',marginLeft :15}}>
                     <Text style={styles.titles1}>10 Services Avalilable</Text>
@@ -44,5 +40,13 @@ const styles = ScaledSheet.create({
         fontSize: '11@s',
         fontFamily: 'Poppins-Light',
         
+    },
+    image:{
+        resizeMode: 'cover',
+        width: '120@s',
+        height: '100%',
+        borderTopLeftRadius: '12@s',
+        borderBottomLeftRadius: '12@s',
+        overflow: "hidden"
     }
     })
