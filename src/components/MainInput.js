@@ -17,7 +17,8 @@ const styles = ScaledSheet.create({
     width: '90%',
     marginTop: "8@s",
   },
-  label: {
+    label: {
+   // backgroundColor:'#EAFFFF',
     fontSize: '13@s',
     fontFamily: 'Inter-Medium',
   },

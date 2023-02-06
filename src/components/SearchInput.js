@@ -9,7 +9,7 @@ export default function SearchInput() {
         <View style={{ width: '100%', backgroundColor: '#FFFF' }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TextInput
-                    style={{ flex: 1, borderRadius: scale(25), color: '#0000' }}
+                    style={{ flex: 1, borderRadius: scale(25), color: '#0000',fontFamily:'Inter-Light' }}
                     placeholder="What are you looking for"
                     value={searchText}
                     onChangeText={text => setSearchText(text)}

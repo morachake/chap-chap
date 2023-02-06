@@ -10,8 +10,8 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
-        <ScrollView showsHorizontalScrollIndicator={false} style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#EAFFFF' }}>
+        <ScrollView showsHorizontalScrollIndicator={false} style={{ flex: 1,backgroundColor: '#FFFF' }}>
+            <View style={{ backgroundColor: '#EAFFFF' }}>
                 <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                 <View style={styles.header}>
                     <Text style={{ justifyContent: 'center' }}>
@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
                     <SearchInput />
                 </View>
             </View>
-            <View style={{ flex: 1.6, backgroundColor: '#FFFFFF' }}>
+            <View style={{backgroundColor: '#FFFFFF' }}>
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={styles.title}>Categories</Text>
                     <Services />
@@ -64,27 +64,27 @@ const styles = ScaledSheet.create({
     },
     firstThree: {
         color: '#00748D',
-        fontFamily: 'Poppins-BoldItalic',
+        fontFamily: 'Inter-Medium',
         fontSize: '18@s',
     },
     rest: {
         color: '#041747',
-        fontFamily: 'Poppins-BoldItalic',
+        fontFamily: 'Inter-Medium',
         fontSize: '18@s',
     },
     user: {
         paddingTop: '10@s',
-        fontFamily: 'Poppins-Light',
+        fontFamily: 'Inter-Medium',
         fontSize: '12@s',
         color: '##000000',
     },
     service: {
         paddingTop: '10@s',
         fontSize: '24@s',
-        fontFamily: 'Poppins-LightItalic',
+        fontFamily: 'Inter-Medium',
     },
     title: {
-        fontFamily: 'Poppins-Light',
+        fontFamily: 'Inter-Medium',
         fontSize: '16@s',
         color: '#000000',
         margin: '10@s'
