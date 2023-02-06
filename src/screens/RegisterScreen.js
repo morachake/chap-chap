@@ -7,9 +7,17 @@ import { COLORS } from '../constants/index'
 import { ScaledSheet } from 'react-native-size-matters';
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [errorMessage, setErrorMessage] = useState(false);
     const handleSubmit=()=>{
-
+        if (!email ) {
+            setErrorMessage('Email cannot be blank')
+        } else if (!name){
+            setErrorMessage('Name cannot be blank')
+        } else {
+            setErrorMessage(false)
+            navigation.navigate('Home')
+        }
     }
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
@@ -17,10 +25,17 @@ export default function RegisterScreen({ navigation }) {
             <Text style={styles.heading}>Register</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <MainInput
-                    errorMessage="invalid name"
+                    errorMessage={errorMessage}
                     label="Your Name"
+                    value={name}
+                    onChangeText={text => setName(text)}
                 />
-                <MainInput label="Your Email Adress" />
+                <MainInput
+                    errorMessage={errorMessage}
+                    label="Your Email Adress"
+                    value={email}
+                    onChangeText={text => setPassword(text)}
+                />
             </View>
             <View style={styles.btncontainer}>
                 <Btn
