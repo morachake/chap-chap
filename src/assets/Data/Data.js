@@ -7,7 +7,7 @@ const servicesData = [
   {
     title: 'Repairs',
     index: 2,
-    image: require('../images/mechanic.png'),
+    image: require('../images/repair-tools.png'),
   },
   {
     title: 'Laundary',
@@ -17,7 +17,7 @@ const servicesData = [
   {
     title: 'Gardening',
     index: 3,
-    image: require('../images/spanner.png'),
+    image: require('../images/pruning-shears.png'),
   },
 ];
 
