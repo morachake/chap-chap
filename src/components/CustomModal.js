@@ -18,7 +18,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
         >
             <View style={styles.modalcontainer}>
                 <View style={styles.screen}>
-                    <View style={{ borderBottomWidth: scale(1), width: '100%', flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ borderBottomWidth: scale(1), borderColor:'#D9D9D9', width: '100%', flexDirection: 'row', alignItems: 'center' }}>
                         <Image
                             source={IMAGES.User}
                             resizeMode="cover"
@@ -26,7 +26,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
 
                         />
                         <View style={{ alignItems: 'center', justifyContent: 'center', }}>
-                            <Text style={{ fontSize: scale(14), fontFamily: 'Inter-Medium' }}>Munene Phineas</Text>
+                            <Text style={{ fontSize: scale(14),color:'#000000', fontFamily: 'Inter-Medium' }}>Munene Phineas</Text>
                             <TouchableOpacity
                                 onPress={() => navigation.navigate('Profile')}
                                 style={{
@@ -43,7 +43,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                     </View>
 
 
-                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4 }}>
+                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4 ,borderColor:'#D9D9D9',}}>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('PastJobs')}
                             style={styles.wrapper}
@@ -52,7 +52,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                             <Text style={styles.titles}>Past Jobs</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4 }}>
+                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4,borderColor:'#D9D9D9',alignItems:'center', justifyContent:'center' }}>
                         <TouchableOpacity style={styles.wrapper}
                             onPress={() => navigation.navigate('Favourites')}
                         >
@@ -60,14 +60,14 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                             <Text style={styles.titles}>Favourites</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4 }}>
+                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4,marginHorizontal :4,borderColor:'#D9D9D9', }}>
                         <TouchableOpacity style={styles.wrapper} >
                             <AntDesign name="setting" size={35} />
                             <Text style={styles.titles}>Settings</Text>
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity onPress={() => setModalVisible(false)}>
-                        <Text style={{ fontSize: 18, fontFamily: 'Inter-Medium',color:'rgba(0, 0, 0, 0.6)' }}>Cancel</Text>
+                        <Text style={{ fontSize: 18, fontFamily: 'Inter-Light',color:'rgba(0, 0, 0, 0.6)' }}>Cancel</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -90,7 +90,7 @@ const styles = ScaledSheet.create({
         borderRadius: '6@s',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        borderWidth: '0.5@s',
+        borderWidth: '0.1@s',
         borderColor:'#D9D9D9',
         backgroundColor: 'white',
     },
@@ -107,6 +107,7 @@ const styles = ScaledSheet.create({
         marginVertical: scale(3)
     },
     titles: {
+        fontFamily:'Inter-Medium',
         fontSize: '14@s',
         marginHorizontal: '10@s',
         color:'#000000',

@@ -31,8 +31,7 @@ export default function HomeScreen({ navigation }) {
                 <View style={{ marginBottom:10}}>
                     <Text style={styles.user}>Hi James,</Text>
                     <Text style={styles.service}>
-                        What  
-                         <Text style={{ fontFamily: 'Inter-Bold',color: 'rgba(4, 23, 71, 0.8)' }}>
+                        What  <Text style={{ fontFamily: 'Inter-Bold', color: 'rgba(4, 23, 71, 0.8)' }}>
                               services
                         </Text> do you need today?</Text>
                     <SearchInput />

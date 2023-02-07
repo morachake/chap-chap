@@ -51,7 +51,7 @@ export default function DetailsScreen({ navigation }) {
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <KeyboardAvoidingView behavior="height" style={styles.container}>
                 <Header iconLeft="arrowleft" />
-                    <Text style={{fontSize: scale(32),marginHorizontal: scale(15),}}>House Cleaning</Text>
+                    <Text style={{fontSize: scale(32),marginHorizontal: scale(15),fontFamily: 'Inter-Bold',color:'#000000'}}>House Cleaning</Text>
                 <View style={{justifyContent: 'center',alignItems: 'center',}}>
                     {errorMessage ? (
                         <Text style={styles.errormessage}>{errorMessage}</Text>

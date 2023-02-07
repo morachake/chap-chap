@@ -40,7 +40,7 @@ const styles = ScaledSheet.create({
         padding: '10@s'
     },
     image: {
-        width: '30@s',
-        height: '30@s',
+        width: '28@s',
+        height: '28@s',
     }
 })

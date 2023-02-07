@@ -33,12 +33,12 @@ const styles = ScaledSheet.create({
     },
     titles1: {
         fontSize: '12@s',
-        fontFamily: 'Poppins-Light',
+        fontFamily: 'Inter-Bold',
         padding:'5@s'
     },
     titles: {
         fontSize: '11@s',
-        fontFamily: 'Poppins-Light',
+        fontFamily: 'Inter-Medium',
         
     },
     image:{
