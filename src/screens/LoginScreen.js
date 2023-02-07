@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
 import { COLORS } from '../constants';
 import { ScaledSheet, scale } from 'react-native-size-matters';
-export default function LoginScreen({navigation}) {
+export default function LoginScreen({ navigation }) {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const [errorMessage, setErrorMessage] = useState('');
+    const handleLogin = () => {
+        if (!email) {
+            setErrorMessage('Email cannot be blank');
+        } else if (!password) {
+            setErrorMessage('Password cannot be blank');
+        } else {
+            setErrorMessage('');
+            navigation.navigate('Home');
+        }
+    }
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
             <Header iconLeft="arrowleft" />
-            <Text style={styles.heading}>Create new Account</Text>
+            <Text style={styles.heading}>Login</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <MainInput label="New password" />
-                <MainInput label="Confirm password" />
+                <MainInput
+                    value={email}
+                    onChangeText ={(text) => setEmail(text)}
+                    label="Email" />
+                <MainInput
+                    value={password}
+                    onChangeText={(text)=> setPassword(text)}
+                    label="Password"
+                />
+                {errorMessage ? (
+                    <Text style={styles.errormessage}>{errorMessage }</Text>
+                ) : null}
             </View>
             <View style={{ flexDirection: 'row', margin: scale(20) }}>
                 <Text style={styles.text}>Dont  have an account ?</Text>
@@ -20,7 +43,7 @@ export default function LoginScreen({navigation}) {
             </View>
             <View style={styles.btncontainer}>
                 <Btn
-                    onPress={()=>navigation.navigate("Home")}
+                    onPress={handleLogin}
                     title="Login" />
               
             </View>
@@ -49,4 +72,8 @@ const styles = ScaledSheet.create({
         fontSize: '14@s',
         color: COLORS.primary,
     },
+    errormessage: {
+        color: 'red',
+        marginTop: '10@s',
+      },
 });

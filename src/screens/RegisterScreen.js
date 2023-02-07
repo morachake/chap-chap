@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Keyboard } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
@@ -8,38 +8,40 @@ import { ScaledSheet } from 'react-native-size-matters';
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
-    const [errorMessage, setErrorMessage] = useState(false);
-    const handleSubmit=()=>{
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleLogin = () => {
         if (!email ) {
-            setErrorMessage('Email cannot be blank')
-        } else if (!name){
-            setErrorMessage('Name cannot be blank')
-        } else {
-            setErrorMessage(false)
-            navigation.navigate('Home')
+            setErrorMessage('Email   cannot be empty');
+        } else if (!name) {
+            setErrorMessage('Name  cannot be empty');
+         } else{
+            setErrorMessage('');
+            navigation.navigate('Home');
         }
-    }
+    };
     return (
         <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
             <Header iconLeft="arrowleft" onPress={() => navigation.goBack} />
             <Text style={styles.heading}>Register</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <MainInput
-                    errorMessage={errorMessage}
                     label="Your Name"
-                    value={name}
-                    onChangeText={text => setName(text)}
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}
                 />
                 <MainInput
-                    errorMessage={errorMessage}
                     label="Your Email Adress"
-                    value={email}
-                    onChangeText={text => setPassword(text)}
+                    value={name}
+                    onChangeText={(text) => setName(text)}
                 />
+                {errorMessage ? (
+                    <Text style={styles.errorMessage}>{errorMessage}</Text>
+                ) : null}
             </View>
             <View style={styles.btncontainer}>
                 <Btn
-                    onPress={handleSubmit}
+                    onPress={handleLogin}
                     title="Register" />
                 <View style={{ flexDirection: 'row', marginTop: 5 }}>
                     <Text style={styles.text}>Already have an account</Text>
@@ -71,4 +73,8 @@ const styles = ScaledSheet.create({
         fontSize: '14@s',
         color: COLORS.primary,
     },
+    errorMessage: {
+        color: 'red',
+        marginTop: 10,
+      },
 });

@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import {Text, TextInput, View, StyleSheet} from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
-export default function MainInput({ label, errorMessage, ...props }) {
+export default function MainInput({ label,onChangeText,  ...props }) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
           <TextInput
-              style={styles.textInput}
-              placeholder={errorMessage || ''}
-              placeholderTextColor={errorMessage ? 'red' : '#000000'}
-          />
+               onChangeText={onChangeText}
+              style={styles.textInput}/>
     </View>
   );
 }
