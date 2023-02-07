@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    KeyboardAvoidingView,
+    ScrollView,
+    TouchableWithoutFeedback,
+    Keyboard
+} from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import { COLORS } from '../constants/index'
@@ -21,7 +29,7 @@ export default function DetailsScreen({ navigation }) {
         navigation.navigate('Cleaner',{state})
     }
     return (
-
+        <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
         <KeyboardAvoidingView behavior="height" style={styles.container}>
             <Header iconLeft="arrowleft" />
                 <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
@@ -53,7 +61,7 @@ export default function DetailsScreen({ navigation }) {
                     }}>
                         Date And Time
                     </Text>
-                    <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '90%', marginTop: scale(5) }}>
+                    <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '92%', marginTop: scale(5) }}>
 
                         <View style={styles.checkboxContainer}>
                             <Text style={styles.label}>Right Away</Text>
@@ -84,21 +92,21 @@ export default function DetailsScreen({ navigation }) {
                 </View>
             </ScrollView>
             <View style={styles.bottomContainer}>
-                <View>
-                    <Text
-                        style={{
-                            fontSize: scale(17),
-                            color: '#00000080',
-                            fontFamily: 'Inter-Medium'
-                        }}>Total Price</Text>
-                    <Text
-                        style={{
-                            fontSize: scale(15), color:
-                                '#00000080', fontFamily:
-                                'Inter-Light'
-                        }}
-                    >KES 20300 - 20700</Text>
-                </View>
+                    <View>
+                        <Text
+                            style={{
+                                fontSize: scale(17),
+                                color: '#00000080',
+                                fontFamily: 'Inter-Medium'
+                            }}>Total Price</Text>
+                        <Text
+                            style={{
+                                fontSize: scale(15), color:
+                                    '#00000080', fontFamily:
+                                    'Inter-Light'
+                            }}
+                        >KES 20300 - 20700</Text>
+                    </View>
                     <View >
                         <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
                             <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
@@ -107,12 +115,12 @@ export default function DetailsScreen({ navigation }) {
                 </View>
                
         </KeyboardAvoidingView>
-
+        </TouchableWithoutFeedback>
     );
 }
 const styles = ScaledSheet.create({
     container: {
-       // flex: 1,
+        flex: 1,
         backgroundColor: '#FFFF',
     },
     topContainer: {
@@ -121,14 +129,12 @@ const styles = ScaledSheet.create({
         alignItems: 'center'
     },
     bottomContainer: {
-        bottom: 0,
         width: '100%',
-        height:95,
         backgroundColor: '#C4F3FF',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
         alignItems: 'center',
-        position:'relative'
+        bottom: 0,
+        height: '95@s',
     },
     btn: {
         backgroundColor: COLORS.primary,
@@ -149,7 +155,7 @@ const styles = ScaledSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         padding: 2,
-        height: '41@s',
+        height: '42@s',
         flex: 0.3,
         borderRadius: '6@s'
     },
@@ -160,7 +166,7 @@ const styles = ScaledSheet.create({
         borderWidth: 1,
         padding: 2,
         marginHorizontal: '8@s',
-        height: '41@s',
+        height: '42@s',
         flex: 0.7,
         borderRadius: '6@s'
     },
