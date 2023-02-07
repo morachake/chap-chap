@@ -97,7 +97,7 @@ const styles = ScaledSheet.create({
         fontFamily: 'Inter-Medium',
     },
     title: {
-        fontFamily: 'Inter-Medium',
+        fontFamily: 'Inter-Bold',
         fontSize: '16@s',
         color: '#000000',
         margin: '10@s',

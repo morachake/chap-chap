@@ -25,7 +25,7 @@ export default function DetailsScreen({ navigation }) {
     const [details,setDetails]=useState()
     const handleSubmit = () => {
         if (!houses || !rooms || !adress || !details ) {
-            setErrorMessage('Empty fields')
+            setErrorMessage('All mandatory fields must be filled')
         } else {
             navigation.navigate('Cleaner')
         }
@@ -51,17 +51,10 @@ export default function DetailsScreen({ navigation }) {
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <KeyboardAvoidingView behavior="height" style={styles.container}>
                 <Header iconLeft="arrowleft" />
-                <View
-                    style={{
-                            marginHorizontal: scale(15)
-                        }}>
-                    <Text
-                        style={{
-                            fontSize: scale(32),
-                        }}
-                    >House Cleaning</Text>
+                    <Text style={{fontSize: scale(32),marginHorizontal: scale(15)}}>House Cleaning</Text>
+                <View style={{justifyContent: 'center',alignItems: 'center',}}>
                     {errorMessage ? (
-                        <Text style={styles.errormessage}>empty inputs</Text>
+                        <Text style={styles.errormessage}>{errorMessage}</Text>
                     ) : null}
                 </View>
                     <ScrollView>
@@ -228,10 +221,10 @@ const styles = ScaledSheet.create({
         fontFamily: 'Inter-Medium'
     },
     errormessage: {
-        alignContent:'center',
-        justifyContent:'center',
+        fontSize: '14@s',
+        fontFamily:'Inter-Italic',
         color: 'red',
-        margin: '10@s',
+        margin: '5@s',
     }
 });
 
