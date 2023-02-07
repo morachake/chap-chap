@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -15,83 +15,123 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 import CustomCheck from '../components/CustomCheck';
 import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
-    const [state, setState] = useState({
-        houses: '',
-        rooms: '',
-        adress: '',
-        details:'',
-        date:new Date(),
-      });
-    const [open,setOpen]= useState(false)
+    const [open, setOpen] = useState(false)
     const [checked, setChecked] = useState(false);
-    const [date,setDate] = useState(new Date())
-    const handleSubmit = () => { 
-        navigation.navigate('Cleaner',{state})
+    const [date, setDate] = useState(new Date())
+    const [errorMessage, setErrorMessage] = useState('');
+    const [houses, setHouses] = useState()
+    const [rooms, setRooms] = useState()
+    const [adress, setAdress] = useState()
+    const [details,setDetails]=useState()
+    const handleSubmit = () => {
+        if (!houses || !rooms || !adress || !details ) {
+            setErrorMessage('Empty fields')
+        } else {
+            navigation.navigate('Cleaner')
+        }
     }
+    const [keyboardVisible, setKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => setKeyboardVisible(true)
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => setKeyboardVisible(false)
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
     return (
-        <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
-        <KeyboardAvoidingView behavior="height" style={styles.container}>
-            <Header iconLeft="arrowleft" />
-                <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
-            <ScrollView>
-            <View style={styles.topContainer}>
-                
-                <MainInput
-                    label="Type of House"
-                    onChangeText={(text) => setState({ ...state, houses: text })}
-                />
-                <MainInput
-                    label="Number of rooms"
-                    onChangeText={(text) => setState({...state, rooms:text})}
-                />
-                <MainInput
-                    label="Adress"
-                    onChangeText={(text) => setState({...state,adress:text})}
-                />
-                <MainInput
-                    label="Any other Details"
-                    onChangeText={(text) => setState({...state, details:text})}
-                />
-                <View>
-                    <Text style={{
-                        marginTop: scale(20),
-                        fontSize: scale(13),
-                        color: '#00000080',
-                        fontFamily: 'Inter-Medium'
-                    }}>
-                        Date And Time
-                    </Text>
-                    <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '92%', marginTop: scale(5) }}>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <KeyboardAvoidingView behavior="height" style={styles.container}>
+                <Header iconLeft="arrowleft" />
+                <View
+                    style={{
+                            marginHorizontal: scale(15)
+                        }}>
+                    <Text
+                        style={{
+                            fontSize: scale(32),
+                        }}
+                    >House Cleaning</Text>
+                    {errorMessage ? (
+                        <Text style={styles.errormessage}>empty inputs</Text>
+                    ) : null}
+                </View>
+                    <ScrollView>
+               
+                    <View style={styles.topContainer}>
 
-                        <View style={styles.checkboxContainer}>
-                            <Text style={styles.label}>Right Away</Text>
-                            <CustomCheck value={checked} onValueChange={setChecked} />
+                        <MainInput
+                            label="Type of House"
+                            onChangeText={(text) => setHouses(text) }
+                        />
+                        <MainInput
+                            label="Number of rooms"
+                            onChangeText={(text) =>  setRooms(text)}
+                        />
+                        <MainInput
+                            label="Adress"
+                            onChangeText={(text) => setAdress(text)}
+                        />
+                        <MainInput
+                            label="Any other Details"
+                            onChangeText={(text) => setDetails(text)}
+                        />
+                        <View>
+                            <Text style={{
+                                marginTop: scale(20),
+                                fontSize: scale(13),
+                                color: 'rgba(0, 0, 0, 0.7)',
+                                fontFamily: 'Inter-Medium'
+                               
+                            }}>
+                                Date And Time
+                            </Text>
+                            <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '92%', marginTop: scale(5) }}>
+
+                                <View style={styles.checkboxContainer}>
+                                    <Text style={styles.label}>Right Away</Text>
+                                    <CustomCheck value={checked} onValueChange={setChecked} />
+                                </View>
+
+                                <TouchableOpacity
+                                    style={styles.calendaCont}
+                                    onPress={() => setOpen(!open)}
+                                >
+                                    <Text>{date ? date.toLocaleString() : "Schedule"}</Text>
+                                    <DatePicker
+                                        modal
+                                        open={open}
+                                        date={date}
+                                        onConfirm={(date) => {
+                                            setOpen(false)
+                                            setDate(date)
+                                        }}
+                                        onCancel={() => {
+                                            setOpen(false)
+                                        }}
+                                        androidVariant='iosClone'
+                                        mode="datetime"
+                                    />
+                                </TouchableOpacity>
+                            </View>
                         </View>
+                        <MainInput label="" />
 
-                        <TouchableOpacity style={styles.calendaCont} onPress={() => setOpen(!open)} >
-                            <Text>{date ? date.toLocaleString() : "Schedule"}</Text>
-                            <DatePicker
-                                modal
-                                open={open}
-                                date={date}
-                                onConfirm={(date) => {
-                                    setOpen(false)
-                                    setDate(date)
-                                }}
-                                onCancel={() => {
-                                    setOpen(false)
-                                }}
-                                androidVariant='iosClone'
-                                mode="datetime"
-                            />
-                        </TouchableOpacity>
                     </View>
-                </View>
-                    <MainInput label="" />
-                    
-                </View>
-            </ScrollView>
-            <View style={styles.bottomContainer}>
+                
+                
+
+                </ScrollView>            
+                <TouchableOpacity style={{ display: keyboardVisible ? 'none' : 'flex' }}>
+                <View style={styles.bottomContainer}>
                     <View>
                         <Text
                             style={{
@@ -101,40 +141,52 @@ export default function DetailsScreen({ navigation }) {
                             }}>Total Price</Text>
                         <Text
                             style={{
-                                fontSize: scale(15), color:
-                                    '#00000080', fontFamily:
-                                    'Inter-Light'
+                                fontSize: scale(15),
+                                color: '#00000080',
+                                fontFamily:'Inter-Light'
                             }}
                         >KES 20300 - 20700</Text>
                     </View>
                     <View >
-                        <TouchableOpacity onPress={handleSubmit} style={styles.btn}>
-                            <Text style={{ color: '#FFFF', fontSize: 14 }}>Book Now</Text>
+                        <TouchableOpacity
+                            onPress={handleSubmit}
+                            style={styles.btn}
+                        >
+                            <Text
+                                style={{
+                                    color: '#FFFF',
+                                    fontSize: 14
+                                }}
+                            >Book Now</Text>
                         </TouchableOpacity>
                     </View>
-                </View>
-               
-        </KeyboardAvoidingView>
+                    </View>
+                    </TouchableOpacity>
+            </KeyboardAvoidingView>            
         </TouchableWithoutFeedback>
     );
 }
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFFF',
+        height:'100%',
+        backgroundColor: '#1111',
+        justifyContent: "space-around"
     },
     topContainer: {
-        //flex: 0.9,
-        //justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom:'30@s'
     },
     bottomContainer: {
-        width: '100%',
+        //width: '100%',
         backgroundColor: '#C4F3FF',
         flexDirection: 'row',
+        justifyContent: 'space-around',
         alignItems: 'center',
-        bottom: 0,
-        height: '95@s',
+        height: '80@s',
+        position: 'relative',
+        marginBottom: 0,
     },
     btn: {
         backgroundColor: COLORS.primary,
@@ -174,6 +226,12 @@ const styles = ScaledSheet.create({
         fontSize: scale(12),
         color: '#00000080',
         fontFamily: 'Inter-Medium'
+    },
+    errormessage: {
+        alignContent:'center',
+        justifyContent:'center',
+        color: 'red',
+        margin: '10@s',
     }
 });
 

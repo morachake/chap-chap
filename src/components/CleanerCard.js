@@ -47,8 +47,8 @@ export default function CleanerCard() {
                     />
                     <View style={{padding:10}}>
                         <Text style={styles.textContainer}>{item.name}</Text>
-                        <Text style={styles.textContainer}>Away {item.distance}</Text>
-                        <Text style={styles.textContainer}>
+                        <Text style={styles.textContainer1}>Away {item.distance}</Text>
+                        <Text style={styles.textContainer2}>
                             <Rating initialValue={item.rating} />
                         </Text>
                     </View>
@@ -65,9 +65,23 @@ const styles = ScaledSheet.create({
         borderRadius: '12@s',
         borderColor: '#D9D9D9',
         flexDirection: 'row',
-        width : '90%'
+        width: '90%',
+        height:'106@s'
     },
     textContainer: {
-        marginVertical:'4@s'
+        fontFamily:'Inter-Medium',
+        marginVertical:'4@s',
+        color: '#000000',
+        fontSize:'14@s',
+    },
+    textContainer1: {
+        fontFamily:'Inter-light',
+        color: 'rgba(0, 0, 0, 0.6)',
+        fontsize: '14@s',
+    },
+    textContainer2: {
+        fontFamily:'Inter-light',
+        color: '#000000',
+        fontsize: '14@s',
     }
 })

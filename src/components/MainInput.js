@@ -21,7 +21,7 @@ const styles = ScaledSheet.create({
   },
     label: {
    // backgroundColor:'#EAFFFF',
-    color:'#000000',
+    color:'rgba(0, 0, 0, 0.7)',
     fontSize: '13@s',
     fontFamily: 'Inter-Medium',
   },
