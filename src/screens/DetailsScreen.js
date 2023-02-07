@@ -22,10 +22,10 @@ export default function DetailsScreen({ navigation }) {
     }
     return (
 
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView behavior="height" style={styles.container}>
             <Header iconLeft="arrowleft" />
                 <Text style={{fontSize:scale(32),marginHorizontal:scale(15)}}>House Cleaning</Text>
-                
+            <ScrollView>
             <View style={styles.topContainer}>
                 
                 <MainInput
@@ -79,8 +79,10 @@ export default function DetailsScreen({ navigation }) {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <MainInput label="" />
-            </View>
+                    <MainInput label="" />
+                    
+                </View>
+            </ScrollView>
             <View style={styles.bottomContainer}>
                 <View>
                     <Text
@@ -126,7 +128,7 @@ const styles = ScaledSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        //position:'relative'
+        position:'relative'
     },
     btn: {
         backgroundColor: COLORS.primary,
