@@ -76,5 +76,6 @@ const styles = ScaledSheet.create({
     errorMessage: {
         color: 'red',
         marginTop: 10,
+        fontFamily:'Inter-Italic'
       },
 });
