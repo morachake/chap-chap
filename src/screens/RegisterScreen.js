@@ -21,7 +21,7 @@ export default function RegisterScreen({ navigation }) {
         }
     };
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <KeyboardAvoidingView style={{ backgroundColor: '#F5F5F5', flex: 1 }}>
           
                 <Header iconLeft="arrowleft" onPress={() => navigation.goBack} />

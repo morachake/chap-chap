@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Touchable, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
@@ -20,34 +20,36 @@ export default function LoginScreen({ navigation }) {
         }
     }
     return (
-        <View style={{ display: 'flex', backgroundColor: '#F5F5F5',flex:1 }}>
-            <Header iconLeft="arrowleft" />
-            <Text style={styles.heading}>Login</Text>
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <MainInput
-                    value={email}
-                    onChangeText ={(text) => setEmail(text)}
-                    label="Email" />
-                <MainInput
-                    value={password}
-                    onChangeText={(text)=> setPassword(text)}
-                    label="Password"
-                />
-                {errorMessage ? (
-                    <Text style={styles.errormessage}>{errorMessage }</Text>
-                ) : null}
-            </View>
-            <View style={{ flexDirection: 'row', margin: scale(20) }}>
-                <Text style={styles.text}>Dont  have an account ?</Text>
-                <Text style={styles.text2} onPress={() => navigation.navigate('Register')}>Register</Text>
-            </View>
-            <View style={styles.btncontainer}>
-                <Btn
-                    onPress={handleLogin}
-                    title="Login" />
-              
-            </View>
-        </View>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <KeyboardAvoidingView style={{ display: 'flex', backgroundColor: '#F5F5F5', flex: 1 }}>
+                <Header iconLeft="arrowleft" />
+                <Text style={styles.heading}>Login</Text>
+                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                    <MainInput
+                        value={email}
+                        onChangeText={(text) => setEmail(text)}
+                        label="Email" />
+                    <MainInput
+                        value={password}
+                        onChangeText={(text) => setPassword(text)}
+                        label="Password"
+                    />
+                    {errorMessage ? (
+                        <Text style={styles.errormessage}>{errorMessage}</Text>
+                    ) : null}
+                </View>
+                <View style={{ flexDirection: 'row', margin: scale(20) }}>
+                    <Text style={styles.text}>Dont  have an account ?</Text>
+                    <Text style={styles.text2} onPress={() => navigation.navigate('Register')}>Register</Text>
+                </View>
+                <View style={styles.btncontainer}>
+                    <Btn
+                        onPress={handleLogin}
+                        title="Login" />
+
+                </View>
+            </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
     );
 }
 const styles = ScaledSheet.create({
@@ -75,6 +77,6 @@ const styles = ScaledSheet.create({
     errormessage: {
         color: 'red',
         marginTop: '10@s',
-        fontFamily:'Inter-Italic'
-      },
+        fontFamily: 'Inter-Italic'
+    },
 });
