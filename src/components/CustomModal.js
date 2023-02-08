@@ -92,7 +92,7 @@ const styles = ScaledSheet.create({
         justifyContent: 'space-evenly',
         borderWidth: '0.1@s',
         borderColor:'#D9D9D9',
-        backgroundColor: 'white',
+        backgroundColor: '#FFFF',
     },
     buttons: {
         marginLeft: '12@s',
