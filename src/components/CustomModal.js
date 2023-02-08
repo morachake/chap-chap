@@ -35,7 +35,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                                     marginVertical: scale(3)
                                 }}
                             >
-                                <Text style={{ fontSize: scale(12),color:'rgba(0, 0, 0, 0.6)', fontFamily: 'Inter-Light' }}>Manage Profile</Text>
+                                <Text style={{ fontSize: scale(12),color:'rgba(0, 0, 0, 0.6)', fontFamily: 'Inter-Regular' }}>Manage Profile</Text>
                                 <Icon name='navigate-next' size={18} />
                             </TouchableOpacity>
                         </View>
@@ -62,12 +62,12 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                     </View>
                     <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4,marginHorizontal :4,borderColor:'#D9D9D9', }}>
                         <TouchableOpacity style={styles.wrapper} >
-                            <AntDesign name="setting" size={35} />
+                            <AntDesign name="setting" size={25} />
                             <Text style={styles.titles}>Settings</Text>
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity onPress={() => setModalVisible(false)}>
-                        <Text style={{ fontSize: 18, fontFamily: 'Inter-Light',color:'rgba(0, 0, 0, 0.6)' }}>Cancel</Text>
+                        <Text style={{ fontSize: 18, fontFamily: 'Inter-Regular',color:'rgba(0, 0, 0, 0.6)' }}>Cancel</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -107,7 +107,7 @@ const styles = ScaledSheet.create({
         marginVertical: scale(3)
     },
     titles: {
-        fontFamily:'Inter-Medium',
+        fontFamily:'Inter-Regular',
         fontSize: '14@s',
         marginHorizontal: '10@s',
         color:'#000000',
