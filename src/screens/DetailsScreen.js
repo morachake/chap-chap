@@ -51,7 +51,7 @@ export default function DetailsScreen({ navigation }) {
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <KeyboardAvoidingView behavior="height" style={styles.container}>
                 <Header iconLeft="arrowleft" />
-                    <Text style={{fontSize: scale(32),marginHorizontal: scale(15),fontFamily: 'Inter-Bold',color:'#000000'}}>House Cleaning</Text>
+                    <Text style={styles.header}>House Cleaning</Text>
                 <View style={{justifyContent: 'center',alignItems: 'center',}}>
                     {errorMessage ? (
                         <Text style={styles.errormessage}>{errorMessage}</Text>
@@ -87,7 +87,7 @@ export default function DetailsScreen({ navigation }) {
                             }}>
                                 Date And Time
                             </Text>
-                            <View style={{ alignItems: 'center', justifyContent: "center", flexDirection: 'row', width: '92%', marginTop: scale(5) }}>
+                            <View style={styles.checkbox}>
 
                                 <View style={styles.checkboxContainer}>
                                     <Text style={styles.label}>Right Away</Text>
@@ -171,6 +171,12 @@ const styles = ScaledSheet.create({
         alignItems: 'center',
         marginBottom:'30@s'
     },
+    header: {
+        fontSize: scale(32),
+        marginHorizontal: scale(15),
+        fontFamily: 'Inter-Bold',
+        color: '#000000'
+    },
     bottomContainer: {
         //width: '100%',
         backgroundColor: '#C4F3FF',
@@ -203,6 +209,13 @@ const styles = ScaledSheet.create({
         height: '42@s',
         flex: 0.3,
         borderRadius: '6@s'
+    },
+    checkbox: {
+        alignItems: 'center',
+        justifyContent: "center",
+        flexDirection: 'row',
+        width: '92%',
+        marginTop: scale(5)
     },
     calendaCont: {
         alignItems: 'center',
