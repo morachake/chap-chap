@@ -100,8 +100,8 @@ const styles = ScaledSheet.create({
         fontSize: '16@s',
         color: '#000000',
         margin: '10@s',
-        borderTopLeftRadius: 12,
-        borderBottomLeftRadius: 12,
+        borderTopLeftRadius: '12@s',
+        borderBottomLeftRadius: '12@s',
         overflow: "hidden"
         
     }
