@@ -98,7 +98,7 @@ export default function DetailsScreen({ navigation }) {
                                     style={styles.calendaCont}
                                     onPress={() => setOpen(!open)}
                                 >
-                                    <Text>{date ? date.toLocaleString() : "Schedule"}</Text>
+                                    <Text style={styles.label}>{date ? date.toLocaleString() : "Schedule"}</Text>
                                     <DatePicker
                                         modal
                                         open={open}
@@ -208,7 +208,8 @@ const styles = ScaledSheet.create({
         padding: 2,
         height: '42@s',
         flex: 0.3,
-        borderRadius: '6@s'
+        borderRadius: '6@s',
+        backgroundColor:'#FFFF'
     },
     checkbox: {
         alignItems: 'center',
@@ -226,11 +227,12 @@ const styles = ScaledSheet.create({
         marginHorizontal: '8@s',
         height: '42@s',
         flex: 0.7,
-        borderRadius: '6@s'
+        borderRadius: '6@s',
+        backgroundColor:'#FFFF'
     },
     label: {
         fontSize: scale(12),
-        color: '#00000080',
+        color: '#0000000',
         fontFamily: 'Inter-Medium'
     },
     errormessage: {
