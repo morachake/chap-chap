@@ -163,7 +163,7 @@ const styles = ScaledSheet.create({
     container: {
         flex: 1,
         height:'100%',
-        backgroundColor: '#1111',
+        backgroundColor: '#F5F5F5',
         justifyContent: "space-around"
     },
     topContainer: {

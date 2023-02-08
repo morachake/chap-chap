@@ -7,7 +7,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 export default function FavScreen() {
     return (
-        <View>
+        <View style={{flex:1,backgroundColor:'#F5F5F5'}}>
             <Header iconLeft="arrowleft" />
             <View style={{ marginHorizontal: 20, alignItems: 'center' }}>
                 <Text style={styles.header}> Favourites</Text>

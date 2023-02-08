@@ -19,7 +19,7 @@ export default function ProfileScreen() {
                     </View>
                 </View>
             </View>
-            <View style={{ flex: 2, backgroundColor: '#FFFFFF', alignItems: 'center' }}>
+            <View style={{ flex: 2, backgroundColor: '#F5F5F5', alignItems: 'center' }}>
                 <UserDetailsCard iconame="email" headline="Email Adress" title="phineas@gmail.com" />
                 <UserDetailsCard iconame="cellphone" headline="Phone" title="0720000000" />
                 <UserDetailsCard iconame="id-card" headline="ID Card" title="7858642" />

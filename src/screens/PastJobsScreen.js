@@ -6,7 +6,7 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 
 export default function PastJobsScreen() {
     return (
-        <View>
+        <View >
             <Header iconLeft="arrowleft" />
             <View style={{ marginHorizontal: scale(20), }}>
                 <Text style={styles.header}>Past Jobs</Text>
