@@ -52,7 +52,7 @@ export default function CustomModal({ modalVisible, setModalVisible }) {
                             <Text style={styles.titles}>Past Jobs</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4,borderColor:'#D9D9D9',alignItems:'center', justifyContent:'center' }}>
+                    <View style={{ borderBottomWidth: scale(1), width: '100%', paddingVertical: 4,marginHorizontal :4,borderColor:'#D9D9D9', }}>
                         <TouchableOpacity style={styles.wrapper}
                             onPress={() => navigation.navigate('Favourites')}
                         >
