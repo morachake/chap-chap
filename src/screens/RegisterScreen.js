@@ -21,7 +21,7 @@ export default function RegisterScreen({ navigation }) {
         }
     };
     return (
-        <View style={{ display: 'flex', backgroundColor: '#F5F5F5' }}>
+        <View style={{ backgroundColor: '#F5F5F5',flex:1 }}>
             <Header iconLeft="arrowleft" onPress={() => navigation.goBack} />
             <Text style={styles.heading}>Register</Text>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>

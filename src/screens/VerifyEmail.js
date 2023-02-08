@@ -6,7 +6,7 @@ import Btn from '../components/Btn';
 import { ScaledSheet } from 'react-native-size-matters';
 export default function VerifyEmail() {
   return (
-    <View style={{display: 'flex', backgroundColor: '#F5F5F5'}}>
+    <View style={{flex:1, backgroundColor: '#F5F5F5'}}>
       <Header iconLeft="arrowleft" iconright={undefined} />
       <Text style={styles.heading}>Verify Your Email</Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
