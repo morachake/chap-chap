@@ -24,8 +24,8 @@ export default function SingleCleanerScreen({ route }) {
         <View>
             <Header iconLeft="arrowleft" />
             <View style={{ marginHorizontal: 15 }}>
-                <Text style={{ fontSize: scale(32), fontFamily: 'Inter-Bold' }}>Confirm selection</Text>
-                <Text style={{ fontSize: scale(14), fontFamily: 'Inter-Medium' }}>You have selected {item.name} .Please confirm to complete</Text>
+                <Text style={{ fontSize: scale(32), fontFamily: 'Inter-Bold',color:'#000000' }}>Confirm selection</Text>
+                <Text style={{ fontSize: scale(14), fontFamily: 'Inter-Light',color:'rgba(0, 0, 0, 0.7)'  }}>You have selected {item.name} .Please confirm to complete</Text>
             </View>
 
             <View style={styles.container}>
@@ -106,7 +106,7 @@ const styles = ScaledSheet.create({
     },
     textContainer: {
         fontSize: '14@s',
-        fontFamily: 'Inter-Medium',
+        fontFamily: 'Inter-SemiBold',
         padding: '3@s',
     },
     textDetail: {

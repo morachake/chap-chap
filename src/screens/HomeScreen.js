@@ -11,7 +11,7 @@ export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <View style={{ flex: 1, backgroundColor: '#F5F5F5' }}>
+            <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
                 <View style={styles.topcontainer}>
                     <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
                     <View style={styles.header}>

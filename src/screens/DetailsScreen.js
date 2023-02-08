@@ -128,15 +128,15 @@ export default function DetailsScreen({ navigation }) {
                     <View>
                         <Text
                             style={{
-                                fontSize: scale(17),
-                                color: '#00000080',
-                                fontFamily: 'Inter-Medium'
+                                fontSize: scale(15),
+                                color: 'rgba(0, 0, 0, 0.5)',
+                                fontFamily: 'Inter-semiBold'
                             }}>Total Price</Text>
                         <Text
                             style={{
                                 fontSize: scale(15),
-                                color: '#00000080',
-                                fontFamily:'Inter-Light'
+                                color: '#0000000',
+                                fontFamily:'Inter-Bold'
                             }}
                         >KES 20300 - 20700</Text>
                     </View>
@@ -148,7 +148,7 @@ export default function DetailsScreen({ navigation }) {
                             <Text
                                 style={{
                                     color: '#FFFF',
-                                    fontSize: 14
+                                    fontSize: scale(14)
                                 }}
                             >Book Now</Text>
                         </TouchableOpacity>

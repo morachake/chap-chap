@@ -38,9 +38,9 @@ const styles = ScaledSheet.create({
     bottom: 0,
   },
   textAd: {
-    fontFamily: 'Inter-Bold',
-    fontSize: '32@s',
-    color: '#000',
+      fontSize: '32@s',
+      fontFamily: 'Inter-Bold',
+    color: '#000000',
     textAlign: 'center',
     marginBottom: '20@s',
   },

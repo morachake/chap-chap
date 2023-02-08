@@ -24,6 +24,6 @@ const styles = ScaledSheet.create({
     header: {
         fontSize: '32@s',
         color: '#000000',
-        fontFamily: 'Inter-Medium'
+        fontFamily: 'Inter-Bold'
     }
 })

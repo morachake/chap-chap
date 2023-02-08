@@ -9,7 +9,7 @@ export default function FavScreen() {
     return (
         <View style={{flex:1,backgroundColor:'#F5F5F5'}}>
             <Header iconLeft="arrowleft" />
-            <View style={{ marginHorizontal: 20, alignItems: 'center' }}>
+            <View style={{ marginHorizontal: 20 }}>
                 <Text style={styles.header}> Favourites</Text>
                 <JobCard cleaner="Munene" job="Cleaning" date="9th sep 2020" />
                 <JobCard cleaner="Munene" job="Repair" date="9th sep 2020" />
@@ -31,7 +31,7 @@ const styles = ScaledSheet.create({
     header: {
         fontSize: '32@s',
         color: '#000000',
-        fontFamily: 'Inter-Medium'
+        fontFamily: 'Inter-Bold'
     },
     btn: {
         backgroundColor: COLORS.primary,
