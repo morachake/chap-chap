@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Keyboard, ScrollView, Text, Touchable, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { COLORS, IMAGES } from '../constants';
 import SearchInput from '../components/SearchInput';
 import Services from '../components/Services';
@@ -10,44 +10,46 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 export default function HomeScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
-        <View style={{ flex: 1,backgroundColor: '#F5F5F5' }}>
-            <View style={styles.topcontainer}>
-                <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
-                <View style={styles.header}>
-                    <Text style={{ justifyContent: 'center' }}>
-                        <Text style={styles.firstThree}>Chap</Text>
-                        <Text style={styles.rest}>Chap</Text>
-                    </Text>
-                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                        <Image
-                            source={IMAGES.User}
-                            resizeMode="cover"
-                            style={{ width: scale(40), height: scale(40)  }}
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View style={{ flex: 1, backgroundColor: '#F5F5F5' }}>
+                <View style={styles.topcontainer}>
+                    <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+                    <View style={styles.header}>
+                        <Text style={{ justifyContent: 'center' }}>
+                            <Text style={styles.firstThree}>Chap</Text>
+                            <Text style={styles.rest}>Chap</Text>
+                        </Text>
+                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                            <Image
+                                source={IMAGES.User}
+                                resizeMode="cover"
+                                style={{ width: scale(40), height: scale(40) }}
 
-                        />
-                    </TouchableOpacity>
+                            />
+                        </TouchableOpacity>
 
+                    </View>
+                    <View style={{ marginBottom: 10 }}>
+                        <Text style={styles.user}>Hi James,</Text>
+                        <Text style={styles.service}>
+                            What  <Text style={{ fontFamily: 'Inter-Bold', color: 'rgba(4, 23, 71, 0.8)' }}>
+                                services
+                            </Text> do you need today?</Text>
+                        <SearchInput />
+                    </View>
                 </View>
-                <View style={{ marginBottom:10}}>
-                    <Text style={styles.user}>Hi James,</Text>
-                    <Text style={styles.service}>
-                        What  <Text style={{ fontFamily: 'Inter-Bold', color: 'rgba(4, 23, 71, 0.8)' }}>
-                              services
-                        </Text> do you need today?</Text>
-                    <SearchInput />
+                <View style={styles.bottomcontainer}>
+                    <View style={{ flexDirection: 'column' }}>
+                        <Text style={styles.title}>Categories</Text>
+                        <Services />
+                    </View>
+                    <Text style={styles.title}>Home Services</Text>
+                    <ServiceCard />
+                    <Text style={styles.title}>Other Services</Text>
+                    <ServiceCard />
                 </View>
             </View>
-            <View style={styles.bottomcontainer}>
-                <View style={{ flexDirection: 'column' }}>
-                    <Text style={styles.title}>Categories</Text>
-                    <Services />
-                </View>
-                <Text style={styles.title}>Home Services</Text>
-                <ServiceCard />
-                <Text style={styles.title}>Other Services</Text>
-                <ServiceCard />
-            </View>
-        </View>
+        </TouchableWithoutFeedback>
     );
 }
 
@@ -67,12 +69,12 @@ const styles = ScaledSheet.create({
         justifyContent: 'space-evenly',
         backgroundColor: COLORS.lightPrimary,
         height: '40%',
-        padding:'20@s'
+        padding: '20@s'
     },
     bottomcontainer: {
-      //  height: '55%',
-        justifyContent:'space-between'
-        
+        //  height: '55%',
+        justifyContent: 'space-between'
+
     },
     firstThree: {
         color: '#00748D',
@@ -103,6 +105,6 @@ const styles = ScaledSheet.create({
         borderTopLeftRadius: '12@s',
         borderBottomLeftRadius: '12@s',
         overflow: "hidden"
-        
+
     }
 });

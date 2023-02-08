@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Keyboard, TouchableOpacity, Touchable, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native';
+import {
+    View,
+    Text,
+    Keyboard,
+    TouchableWithoutFeedback,
+    KeyboardAvoidingView
+} from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
