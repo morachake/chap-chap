@@ -6,7 +6,8 @@ import {
     KeyboardAvoidingView,
     ScrollView,
     TouchableWithoutFeedback,
-    Keyboard
+    Keyboard,
+    Modal
 } from 'react-native';
 import Header from '../components/Header';
 import MainInput from '../components/MainInput';
@@ -15,14 +16,14 @@ import { ScaledSheet, scale } from 'react-native-size-matters';
 import CustomCheck from '../components/CustomCheck';
 import DatePicker from 'react-native-date-picker';
 export default function DetailsScreen({ navigation }) {
-    const [open, setOpen] = useState(false)
     const [checked, setChecked] = useState(false);
-    const [date, setDate] = useState(new Date())
     const [errorMessage, setErrorMessage] = useState('');
     const [houses, setHouses] = useState()
     const [rooms, setRooms] = useState()
     const [adress, setAdress] = useState()
-    const [details,setDetails]=useState()
+    const [details, setDetails] = useState()
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const handleSubmit = () => {
         if (!houses || !rooms || !adress || !details ) {
             setErrorMessage('All mandatory fields must be filled')
@@ -77,6 +78,7 @@ export default function DetailsScreen({ navigation }) {
                             label="Any other Details"
                             onChangeText={(text) => setDetails(text)}
                         />
+                        {/* modal start */}
                         <View>
                             <Text style={{
                                 marginTop: scale(20),
@@ -96,26 +98,41 @@ export default function DetailsScreen({ navigation }) {
 
                                 <TouchableOpacity
                                     style={styles.calendaCont}
-                                    onPress={() => setOpen(!open)}
+                                    onPress={() => setModalVisible(true)}
                                 >
-                                    <Text style={styles.label}>{date ? date.toLocaleString() : "Schedule"}</Text>
-                                    <DatePicker
-                                        modal
-                                        open={open}
-                                        date={date}
-                                        onConfirm={(date) => {
-                                            setOpen(false)
-                                            setDate(date)
-                                        }}
-                                        onCancel={() => {
-                                            setOpen(false)
-                                        }}
-                                        androidVariant='iosClone'
-                                        mode="datetime"
-                                    />
+                                    <Text style={styles.label}>{selectedDate ? selectedDate.toLocaleString() : "Schedule"}</Text>
+                                    
                                 </TouchableOpacity>
                             </View>
                         </View>
+                        <Modal 
+                            animationType="fade"
+                            transparent={true}
+                            visible={modalVisible}
+                            onRequestClose={() => {
+                                setModalVisible(false);
+                            }}>
+                            <View style={styles.modal}>
+                            <View style={styles.modalContainer}>
+                                <View style={styles.modalInnerContainer}>
+                                <Text style={styles.modalTitle}>{selectedDate ? selectedDate.toLocaleDateString() : "Select a date"}</Text>
+                                <DatePicker
+                                    date={selectedDate}
+                                    mode="datetime"
+                                    androidVariant='iosClone'    
+                                    onDateChange={(date) => {
+                                        setSelectedDate(date);
+                                        setModalVisible(false);
+                                      }}
+                                />
+                                </View>
+                                </View>
+                                </View>
+                        </Modal>
+                        {/* modal end */}
+
+                       
+
                         <MainInput label="" />
 
                     </View>
@@ -218,6 +235,12 @@ const styles = ScaledSheet.create({
         width: '92%',
         marginTop: scale(5)
     },
+    modal: {
+        flex: 1,
+        justifyContent:'center',
+        alignItems: 'center',
+        backgroundColor:'rgba(0, 0, 0, 0.7)'   
+    },
     calendaCont: {
         alignItems: 'center',
         flexDirection: 'row',
@@ -240,6 +263,40 @@ const styles = ScaledSheet.create({
         fontFamily:'Inter-Italic',
         color: 'red',
         margin: '5@s',
-    }
+    },
+    modalContainer: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 300,
+        backgroundColor: '#fff',
+        padding: 20,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
+      },
+      modalInnerContainer: {
+        width: '100%',
+        height: '100%'
+      },
+      modalTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 20
+      },
+      modalButton: {
+        backgroundColor: '#007aff',
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 20,
+        alignSelf: 'center'
+      },
+      modalButtonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        textAlign: 'center'
+      }
+
 });
 
