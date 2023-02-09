@@ -1,7 +1,7 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text} from 'react-native';
 import {COLORS} from '../constants';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function Btn({title, onPress, ...props}) {
   return (
@@ -18,7 +18,6 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '5@s',
-    
   },
   buttonText: {
     color: 'white',
