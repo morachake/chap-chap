@@ -6,12 +6,12 @@ export default function JobCard({ job, cleaner, date, status }) {
     const StatusBar = ({ status }) => {
         let backgroundColor;
 
-        if (status === 'completed') {
+        if (status === 'pending') {
             backgroundColor = 'green';
         } else if (status === 'cancelled') {
             backgroundColor = 'red';
         } else {
-            backgroundColor = 'yellow';
+            backgroundColor = '';
         }
 
         return (

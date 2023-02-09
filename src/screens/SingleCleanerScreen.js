@@ -17,7 +17,7 @@ export default function SingleCleanerScreen({ route }) {
         setTimeout(() => {
             setModalVisible(false);
             setLoading(false);
-            navigation.navigate('Home');
+            navigation.navigate('PastJobs');
         }, 2000)
     }
     return (
