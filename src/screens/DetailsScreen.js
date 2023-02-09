@@ -197,7 +197,6 @@ const styles = ScaledSheet.create({
     color: '#000000',
   },
   bottomContainer: {
-    //width: '100%',
     backgroundColor: '#C4F3FF',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -253,7 +252,7 @@ const styles = ScaledSheet.create({
     height: '42@s',
     flex: 0.7,
     borderRadius: '6@s',
-    backgroundColor: '#FFFF',
+    backgroundColor: '#F5F5F5',
   },
   label: {
     fontSize: scale(12),
@@ -286,17 +285,5 @@ const styles = ScaledSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-  },
-  modalButton: {
-    backgroundColor: '#007aff',
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 20,
-    alignSelf: 'center',
-  },
-  modalButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });

@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import {
   Image,
   Keyboard,
-  ScrollView,
   Text,
-  Touchable,
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
@@ -17,7 +15,7 @@ import CustomModal from '../components/CustomModal';
 import {ScaledSheet, scale} from 'react-native-size-matters';
 
 export default function HomeScreen({navigation}) {
-  const [modalVisible, setModalVisible] = useState(false);;
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
