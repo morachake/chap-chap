@@ -9,7 +9,7 @@ export default function PastJobsScreen() {
     <View>
       <Header iconLeft="arrowleft" />
       <View style={{marginHorizontal: scale(20)}}>
-        <Text style={styles.header}>My Jobs</Text>
+        <Text style={styles.header}>Past Jobs</Text>
         <JobCard
           job="Clean House"
           cleaner="John Doe"

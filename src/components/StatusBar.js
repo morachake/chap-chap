@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
-const StatusBar = ({ status }) => {
+const StatusBar = ({status}) => {
   let backgroundColor;
 
   if (status === 'completed') {
@@ -12,9 +12,7 @@ const StatusBar = ({ status }) => {
     backgroundColor = 'yellow';
   }
 
-  return (
-    <View style={[styles.statusBar, { backgroundColor }]} />
-  );
+  return <View style={[styles.statusBar, {backgroundColor}]} />;
 };
 
 const styles = StyleSheet.create({
