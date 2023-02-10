@@ -23,19 +23,6 @@ export default function PastJobsScreen() {
           status="pending"
         />
         <JobCard
-          job="Clean House"
-          cleaner="John Doe"
-          date="Today"
-          status="completed"
-        />
-
-        <JobCard
-          cleaner="Munene"
-          job="Repair"
-          date="9th sep 2020"
-          status="completed"
-        />
-        <JobCard
           cleaner="Munene"
           job="Repair"
           date="9th sep 2020"

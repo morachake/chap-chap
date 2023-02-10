@@ -4,17 +4,17 @@ import {ScaledSheet, scale} from 'react-native-size-matters';
 
 export default function JobCard({job, cleaner, date, status}) {
   const StatusBar = ({status}) => {
-    let backgroundColor;
+    let textColor;
 
     if (status === 'pending') {
-      backgroundColor = 'green';
+      textColor = 'green';
     } else if (status === 'cancelled') {
-      backgroundColor = 'red';
+      textColor = 'red';
     } else {
-      backgroundColor = '';
+      textColor = '';
     }
 
-    return <View style={[styles.statusBar, {backgroundColor}]} />;
+    return <Text style={[styles.statusBar, {color: textColor}]}>{status}</Text>;
   };
 
   return (
@@ -25,8 +25,9 @@ export default function JobCard({job, cleaner, date, status}) {
           alignItems: 'center',
           borderBottomWidth: 1,
           borderBottomColor: '#E2E2E2',
-          padding: 5,
-          marginTop: 7,
+          padding: scale(5),
+          marginTop: scale(10),
+          height: scale(65),
         }}
       >
         <View style={{flex: 1}}>
@@ -41,19 +42,18 @@ export default function JobCard({job, cleaner, date, status}) {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
-            flexDirection: 'row',
           }}
         >
+          <StatusBar status={status} />
           <Text
             style={{
               fontSize: scale(12),
-              margin: scale(20),
+              margin: scale(4),
               fontFamily: 'Poppins-Italic',
             }}
           >
             {date}
           </Text>
-          <StatusBar status={status} />
         </View>
       </View>
     </ScrollView>
@@ -62,8 +62,8 @@ export default function JobCard({job, cleaner, date, status}) {
 
 const styles = ScaledSheet.create({
   statusBar: {
-    width: '10@s',
-    height: '10@s',
-    borderRadius: '5@s',
+    fontSize: scale(12),
+    marginHorizontal: scale(4),
+    fontFamily: 'Poppins-Italic',
   },
 });
