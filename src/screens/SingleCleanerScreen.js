@@ -134,8 +134,14 @@ export default function SingleCleanerScreen({route}) {
                   <Text style={{fontSize: scale(14), padding: scale(3)}}>
                     At Kilimani 400020
                   </Text>
-                  <Text style={{fontSize: scale(14), padding: scale(3)}}>
-                    Are you sure you want ot continue
+                  <Text
+                    style={{
+                      fontSize: scale(14),
+                      fontFamily: 'Inter-SemiBold',
+                      padding: scale(3),
+                    }}
+                  >
+                    Are you sure you want to continue ?
                   </Text>
                 </View>
 

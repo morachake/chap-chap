@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import MainInput from '../components/MainInput';
 import Btn from '../components/Btn';
 import {COLORS} from '../constants/index';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, scale} from 'react-native-size-matters';
 export default function RegisterScreen({navigation}) {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -48,7 +48,7 @@ export default function RegisterScreen({navigation}) {
         </View>
         <View style={styles.btncontainer}>
           <Btn onPress={handleLogin} title="Register" />
-          <View style={{flexDirection: 'row', marginTop: 5}}>
+          <View style={{flexDirection: 'row', marginTop: scale(15)}}>
             <Text style={styles.text}>Already have an account</Text>
             <Text
               style={styles.text2}
