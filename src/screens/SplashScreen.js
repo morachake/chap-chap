@@ -11,7 +11,7 @@ export default function SplashScreen({navigation}) {
         <Text style={styles.textAd}>Best Home Services for You</Text>
         <Btn title="Register" onPress={() => navigation.navigate('Register')} />
         <View style={styles.bottomcont}>
-          <Text style={styles.text}>Already have an account</Text>
+          <Text style={styles.text}>Already have an account ? </Text>
           <Text
             style={styles.text2}
             onPress={() => navigation.navigate('Login')}
