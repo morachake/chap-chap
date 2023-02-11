@@ -15,8 +15,8 @@ export default function CleanerScreen() {
       <Header iconLeft="arrowleft" />
       {isLoading ? (
         <View style={{marginHorizontal: scale(10)}}>
-          <Text style={{fontSize: scale(32), fontFamily: 'Inter-Bold'}}>
-            Finding Cleaners{' '}
+          <Text style={styles.heading}>
+            Finding Cleaners
           </Text>
           <Text style={styles.subtitle}>
             This may take 1-2 minutes please be patient
