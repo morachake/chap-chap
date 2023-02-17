@@ -87,6 +87,7 @@ export default function DetailsScreen({navigation}) {
                   fontFamily: 'Inter-Medium',
                 }}
               >
+                {' '}
                 Date And Time
               </Text>
               <View style={styles.checkbox}>

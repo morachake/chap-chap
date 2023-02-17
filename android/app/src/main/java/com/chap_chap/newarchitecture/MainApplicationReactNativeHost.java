@@ -1,4 +1,4 @@
-package com.chap_chap.newarchitecture;
+package com.Chapchapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.chap_chap.BuildConfig;
-import com.chap_chap.newarchitecture.components.MainComponentsRegistry;
-import com.chap_chap.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.Chapchapp.BuildConfig;
+import com.Chapchapp.newarchitecture.components.MainComponentsRegistry;
+import com.Chapchapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
