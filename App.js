@@ -4,7 +4,7 @@ import RNBootSplash from 'react-native-bootsplash';
 
 export default function App() {
   useEffect(() => {
-    RNBootSplash.hide({fade: true, duration: 500});
+    RNBootSplash.hide({fade: true, duration: 2500});
   }, []);
   return <MainNavStack />;
 }
