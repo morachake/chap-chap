@@ -37,10 +37,12 @@ const styles = ScaledSheet.create({
     fontSize: '12@s',
     fontFamily: 'Inter-Bold',
     padding: '5@s',
+    color: '#000000',
   },
   titles: {
     fontSize: '11@s',
     fontFamily: 'Inter-Medium',
+    color: '#000000',
   },
   image: {
     resizeMode: 'cover',

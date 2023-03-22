@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {
   View,
@@ -125,13 +126,31 @@ export default function SingleCleanerScreen({route}) {
                     resizeMode="cover"
                     style={styles.imagesmall}
                   />
-                  <Text style={{fontSize: scale(12), padding: scale(3)}}>
+                  <Text
+                    style={{
+                      fontSize: scale(12),
+                      padding: scale(3),
+                      color: '#000000',
+                    }}
+                  >
                     You selected {item.name}{' '}
                   </Text>
-                  <Text style={{fontSize: scale(14), padding: scale(3)}}>
+                  <Text
+                    style={{
+                      fontSize: scale(12),
+                      padding: scale(3),
+                      color: '#000000',
+                    }}
+                  >
                     To clean 10 Rooms
                   </Text>
-                  <Text style={{fontSize: scale(14), padding: scale(3)}}>
+                  <Text
+                    style={{
+                      fontSize: scale(12),
+                      padding: scale(3),
+                      color: '#000000',
+                    }}
+                  >
                     At Kilimani 400020
                   </Text>
                   <Text
@@ -139,6 +158,7 @@ export default function SingleCleanerScreen({route}) {
                       fontSize: scale(14),
                       fontFamily: 'Inter-SemiBold',
                       padding: scale(3),
+                      color: '#000',
                     }}
                   >
                     Are you sure you want to continue ?
@@ -199,11 +219,13 @@ const styles = ScaledSheet.create({
     fontSize: '14@s',
     fontFamily: 'Inter-SemiBold',
     padding: '3@s',
+    color: '#000000',
   },
   textDetail: {
     fontSize: '12@s',
     fontFamily: 'Inter-Medium',
     marginBottom: '20@s',
+    color: '#000000',
   },
   closeButton: {
     position: 'absolute',

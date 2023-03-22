@@ -8,7 +8,12 @@ export default function Header({pagename, iconright, iconLeft}) {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Icon name={iconLeft} size={30} onPress={() => navigation.goBack()} />
+      <Icon
+   4     name={iconLeft}
+        size={30}
+        color={'#000000'}
+        onPress={() => navigation.goBack()}
+      />
       <Text style={styles.pagename}>{pagename}</Text>
       <Icon name={iconright} size={25} />
     </View>

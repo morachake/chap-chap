@@ -31,10 +31,24 @@ export default function JobCard({job, cleaner, date, status}) {
         }}
       >
         <View style={{flex: 1}}>
-          <Text style={{fontSize: scale(14), fontFamily: 'Inter-SemiBold'}}>
+          <Text
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              fontSize: scale(14),
+              fontFamily: 'Inter-SemiBold',
+              color: '#000000',
+            }}
+          >
             {job}
           </Text>
-          <Text style={{fontSize: scale(12), fontFamily: 'Inter-Light'}}>
+          <Text
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              fontSize: scale(12),
+              fontFamily: 'Inter-Light',
+              color: '#000000',
+            }}
+          >
             {cleaner}
           </Text>
         </View>
@@ -50,6 +64,7 @@ export default function JobCard({job, cleaner, date, status}) {
               fontSize: scale(12),
               margin: scale(4),
               fontFamily: 'Poppins-Italic',
+              color: '#000000',
             }}
           >
             {date}

@@ -154,7 +154,7 @@ export default function DetailsScreen({navigation}) {
               <Text
                 style={{
                   fontSize: scale(15),
-                  color: '#0000000',
+                  color: '#000000',
                   fontFamily: 'Inter-Bold',
                 }}
               >
@@ -257,7 +257,7 @@ const styles = ScaledSheet.create({
   },
   label: {
     fontSize: scale(12),
-    color: '#0000000',
+    color: '#000000',
     fontFamily: 'Inter-Medium',
   },
   errormessage: {

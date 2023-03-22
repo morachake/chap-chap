@@ -42,6 +42,7 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.service}>
               What{' '}
               <Text
+                // eslint-disable-next-line react-native/no-inline-styles
                 style={{
                   fontFamily: 'Inter-Bold',
                   color: 'rgba(4, 23, 71, 0.8)',
@@ -96,7 +97,7 @@ const styles = ScaledSheet.create({
     fontSize: '18@s',
   },
   rest: {
-    color: '#041747',
+    color: '#041747CC',
     fontFamily: 'Inter-Bold',
     fontSize: '18@s',
   },
@@ -104,12 +105,13 @@ const styles = ScaledSheet.create({
     paddingTop: '10@s',
     fontFamily: 'Inter-Bold',
     fontSize: '12@s',
-    color: '##000000',
+    color: '#000000',
   },
   service: {
     paddingVertical: '10@s',
     fontSize: '24@s',
     fontFamily: 'Inter-Medium',
+    color: '#041747',
   },
   title: {
     fontFamily: 'Inter-Bold',
